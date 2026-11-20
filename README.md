@@ -6,6 +6,8 @@ or export.
 
 **Download:** [the latest version](../../releases/latest), for Mac and for Windows.
 
+**Manual:** [User Manual](manual/user-manual.md) (written for Windows; the Mac app works the same way).
+
 *Deutsch: weiter unten.*
 
 ## Mac
@@ -37,6 +39,8 @@ deine Musik, du formst die Intensität des Sets als Kurve, und es mischt die Son
 du abspielen oder exportieren kannst.
 
 **Download:** [die neueste Version](../../releases/latest), für Mac und Windows.
+
+**Handbuch:** [Benutzerhandbuch](manual/benutzerhandbuch.md) (für Windows geschrieben; die Mac-App funktioniert genauso, ist aber auf Englisch).
 
 ## Mac
 
