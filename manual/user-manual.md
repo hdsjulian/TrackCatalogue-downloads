@@ -155,7 +155,7 @@ them.
 
 ![A song's details](images/song-details.png)
 
-At the top is the song's intensity over time, from cool blue (calm) to warm red (intense). Click
+At the top is the song's intensity over time, from night blue (calm) to fire yellow (intense). Click
 it to play from there; **Play**, **−15 s** and **+15 s** control playback. Below it:
 
 **Classification**
@@ -490,7 +490,8 @@ Below it:
 - **Length**: **−5 s**, **+5 s**, and **Automatic** to go back to the automatic length.
 - **Beats ◀ ▶**: moves the incoming song a beat earlier or later against the outgoing one, if
   the beats aren't quite aligned.
-- **Play Transition**: plays from 15 seconds before the overlap.
+- **Play Transition**: plays from 15 seconds before the overlap. While it plays, the button says
+  **Pause Transition**.
 - **Play from the Ramp**: plays from where the tempo starts changing.
 - **Reset to Automatic**: undoes all your changes to this transition.
 

@@ -165,7 +165,7 @@ blendet sie ein und aus.
 
 ![Die Details eines Songs](images/de/song-details.png)
 
-Oben ist die Intensität des Songs über seine Dauer, von kühlem Blau (ruhig) bis warmem Rot
+Oben ist die Intensität des Songs über seine Dauer, von Nachtblau (ruhig) bis Feuergelb
 (intensiv). Klick hinein, um von dort abzuspielen; **Abspielen**, **−15 s** und **+15 s** steuern
 die Wiedergabe. Darunter:
 
@@ -523,7 +523,8 @@ Darunter:
 - **Dauer**: **−5 s**, **+5 s**, und **Automatisch** für die automatische Länge.
 - **Beats ◀ ▶**: verschiebt den kommenden Song einen Beat früher oder später gegenüber dem
   gehenden, falls die Beats nicht ganz übereinanderliegen.
-- **Übergang abspielen**: spielt ab 15 Sekunden vor der Überlappung.
+- **Übergang abspielen**: spielt ab 15 Sekunden vor der Überlappung. Während er spielt, heißt der
+  Knopf **Übergang anhalten**.
 - **Ab der Rampe abspielen**: spielt ab der Stelle, wo sich das Tempo zu ändern beginnt.
 - **Auf automatisch zurücksetzen**: nimmt alle deine Änderungen an diesem Übergang zurück.
 

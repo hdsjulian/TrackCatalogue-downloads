@@ -6,7 +6,9 @@ or export.
 
 **Download:** [the latest version](../../releases/latest), for Mac and for Windows.
 
-**Manual:** [User Manual](manual/user-manual.md) (written for Windows; the Mac app works the same way).
+**Manual for Windows:** [read it here](manual/user-manual.md), or as a
+[PDF](manual/Track%20Catalogue%20for%20Windows%20-%20User%20Manual.pdf) to print. A manual for the Mac
+is coming.
 
 *Deutsch: weiter unten.*
 
@@ -40,7 +42,9 @@ du abspielen oder exportieren kannst.
 
 **Download:** [die neueste Version](../../releases/latest), für Mac und Windows.
 
-**Handbuch:** [Benutzerhandbuch](manual/benutzerhandbuch.md) (für Windows geschrieben; die Mac-App funktioniert genauso, ist aber auf Englisch).
+**Handbuch für Windows:** [hier lesen](manual/benutzerhandbuch.md), oder als
+[PDF](manual/Track%20Catalogue%20f%C3%BCr%20Windows%20-%20Benutzerhandbuch.pdf) zum Ausdrucken. Ein
+Handbuch für den Mac kommt bald.
 
 ## Mac
 
