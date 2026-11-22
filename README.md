@@ -20,6 +20,7 @@ asks before it installs one. If you have 0.5 or older, download and install 0.6 
 ## Mac
 
 1. Download `TrackCatalogue-<version>.dmg`, open it, and drag TrackCatalogue onto Applications.
+   Start it from Applications, not from the DMG: only there can it update itself.
 2. The first time, macOS says it couldn't check the app, because it doesn't come from the App Store.
    Click "Done". Then open System Settings › Privacy & Security, scroll down to "TrackCatalogue was
    blocked…", click "Open Anyway", and once more "Open Anyway". You do this once per version.
@@ -60,6 +61,7 @@ und installier es.
 ## Mac
 
 1. Lade `TrackCatalogue-<Version>.dmg` herunter, öffne es und zieh TrackCatalogue auf „Programme“.
+   Starte es aus „Programme“, nicht aus dem DMG: Nur dort kann es sich selbst aktualisieren.
 2. Beim ersten Mal sagt macOS, es konnte die App nicht prüfen, weil sie nicht aus dem App Store
    kommt. Klick auf „Fertig“. Öffne dann Systemeinstellungen › Datenschutz & Sicherheit, scroll nach
    unten zu „TrackCatalogue wurde blockiert …“ und klick auf „Trotzdem öffnen“, dann noch einmal auf
