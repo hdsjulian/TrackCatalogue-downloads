@@ -87,6 +87,17 @@ catalogue.
 **Remove** (or the Delete key) takes the selected songs out of the catalogue. The files stay
 where they are.
 
+### Songs without tags
+
+Some files have no tags: no artist, title or album inside them. The app then reads the names from
+the file and its folders: `Artist - Album\03 Title.wav`, `Artist\Album\03 Title.flac`, and
+Bandcamp's `Artist - Album - 03 Title.mp3` all give the artist, the album and the title.
+
+For each folder of such songs, a **Songs Without Tags** window shows what it read. Correct
+anything that's wrong, then press **Confirm**; the files themselves aren't changed. **Skip** leaves
+the songs as they were read, and **Skip All** does that for every folder still waiting. Ctrl+Z
+undoes a confirmation.
+
 ## The columns
 
 | Column | What it shows |
@@ -190,7 +201,27 @@ Edit these to correct the file's tags (in the app only; the file isn't changed).
 File Info** goes back to the file's tags; **Reset to Automatic** clears every value of yours for
 the song.
 
+**Other Copies**: the same recording in other files, for example an MP3 of a song you also have as
+FLAC, or the same file in two folders. The catalogue shows such a song once, as its best copy
+(lossless before MP3, then the higher quality); the other copies are listed here with their format
+and file name. Sets use the best copy, or the next best when its drive isn't connected, and your
+ratings on any copy count for the song. The app recognises copies by how they sound, so different
+spellings in the tags don't matter; a radio edit or a remaster stays a song of its own. If two
+files aren't the same song after all, **These Are Different Songs** separates them for good.
+
 Fields are kept when you press Enter or leave them.
+
+## Keys
+
+The analysis finds each song's **key**, such as "A minor", for the whole song and for each part
+where the music changes. Songs with no clear key, such as drumming or a drone, show "–". The
+**Key** column shows it, and the **Key** list in the song's details lets you set your own, or
+**No Clear Key**.
+
+When it generates a set, the app prefers neighbours whose keys go together where they overlap.
+Keys never outweigh the intensity curve: they only decide between songs that fit about equally
+well. In the timeline, a small orange dot by a transition's mark says the keys clash there, and
+the transition's close-up names both. Songs always play at their own pitch.
 
 ## Changing several songs at once
 
@@ -304,7 +335,38 @@ The lines between phases are tied to the curve: when you drag one of the curve's
 phases around it move along, so a phase stays with its part of the curve.
 
 Phases are labels for you: they don't change which songs are chosen. They're shown while the
-set plays, and in the session view.
+set plays, and in the live window.
+
+## Templates
+
+A set's shape can be kept as a **template**: its curve, phases, length, tempo line, maximum BPM,
+kind of transition and crossfade length, but not its songs.
+
+- **Curve ▾ › Save as Template…** saves the set's shape under a name. The same name replaces a
+  template.
+- The templates are listed in **Curve ▾**, under the presets: choose one to give the open set
+  its shape.
+- In the catalogue, the **▾** beside **New Set** starts a new set from a template.
+- **Curve ▾ › Manage Templates** has **Export…** (a file to pass on), **Import…** and
+  **Delete…** for each.
+
+## The set's options
+
+**Options ▾** holds a few choices for the whole set:
+
+- **Starts At…**: when the session is planned to start, such as 10:15. The timeline's time axis
+  and the running order then show clock times as well, such as "0:30 · 10:45". Leave it empty
+  for none.
+- **Group**: who the set is for, such as "Tuesday Group". Generate then prefers songs the
+  group's other saved sets don't use, the more recently they were saved the more. **Settings**
+  says when such a song is fresh again: after 4 weeks, 8 weeks, 3 months, or never. The pool's
+  Notes say "Tuesday Group had it 3 weeks ago".
+- **Pre Loop** and **Post Loop**: songs from the pool that play round again before and after
+  the set (see Live play). Tick the songs in each menu.
+- **Plan in Minutes**: each phase gets a length in minutes, and the set's length is their sum.
+  **Phase Minutes…** asks for them in one line, such as "15, 20, 15, 10". The curve keeps its
+  shape inside each phase, squeezed or stretched, and the set may come out up to 5 minutes
+  shorter or longer. While it's on, the length fields only show the result.
 
 ## Maximum BPM
 
@@ -376,6 +438,12 @@ The **Notes** column says what else matters: where in the set the song belongs (
 
 **Required** means "somewhere in this set". To keep a song exactly where it is, **pin** it
 instead (see below).
+
+**Repeats** (right-click) lets Generate use a song more than once, each time another of its parts:
+the intro, the middle, the outro, or a section that stands out. **Other Parts** plays each part
+at most once; **Middle Again Too** lets the middle come back as well. Two parts of a song never
+follow each other directly. The Notes show "↻" with the choice. Dropping such a song on the
+timeline when it's already in the set adds its next part.
 
 When choosing songs, Generate also never puts more than two songs by the same artist in a row.
 
@@ -509,22 +577,45 @@ songs, and come back whenever the same two songs meet again.
 What you hear is exactly what the export will be, with every transition and every song levelled
 to the same loudness.
 
-## The session view
+## Live play
 
-![The session view](images/session.png)
+![The live window](images/session.png)
 
-**Session** opens a large, dark, calm view for the session room: the phase, the time, the song
-playing and the next, and the set's shape with where it is. It changes the set only through
-**Change**, and nothing reaches the room until you confirm, so a stray click can't do any harm.
+**Go Live** opens the live window for the session room: large, dark and calm, with a red **LIVE**
+badge. It opens **ready but silent**: it checks that the drives are connected and the backup has
+started, and the room hears nothing until you press the big red **Start** (or Space). The set then
+plays from the beginning.
+
+It shows the phase and how long until the next ("HEART · 12:30 LEFT"), the time in the set and
+when it will really end, the song playing and the next, the set's shape with a red playhead, and
+the time now.
 
 - **Space** plays and pauses; **−15 s** and **+15 s** (or ← and →) skip.
-- **Full Screen** (or F11) fills the screen.
-- **Done** (or Esc) ends the session and goes back to the set.
+- **Talk** (T) dips the music so you can speak, and brings it back.
+- **Fade Out** (F) fades to silence over a few seconds and pauses; again, it fades back in.
+- **+5**, **+10** and **+20 min** add songs after the one playing, at once; **Next Song** hands over
+  to the next song within about 20 seconds. Both can be undone until they're heard.
+- **Change…** opens Prolong, Shorten, Wrap Up Phase and Change the Set, with an overview first
+  (see below).
+- **Show Set** shows the set window. While live, the set is locked under a red bar; **Back to
+  Live** returns.
+- **End Session** (or closing the window) asks first, then stops the music and unlocks the set.
+- **Full Screen** (or F11) fills the screen; Esc leaves it, and does nothing else here.
+
+Only one set can be live at a time. The set window's play button says **Preview**: it plays the
+set for you, while Go Live plays it for the room.
+
+### Pre and post loops
+
+When the set has a **Pre Loop** (Options ▾), **Pre Loop** appears before Start: its songs play in
+turn and round again while everyone settles. **Start** fades it under the set's first song.
+A **Post Loop** fades in over the set's last 20 seconds and plays on until **Stop the Post Loop**,
+which fades it out over 10 seconds. Neither counts in the set's length or its export.
 
 # Changing a set while it plays
 
 Sometimes the room needs something else than you planned: more time at this level, an earlier
-end, or the next phase sooner. **Change** in the session view does that while the music plays.
+end, or the next phase sooner. **Change** in the live window does that while the music plays.
 
 ![Change: the overview of a change, before you confirm it](images/session-change.png)
 
@@ -568,7 +659,7 @@ at the top says **Adjusting the running set**.
 - **Preset for the Rest** lets the rest of the set follow one of the curve presets. It shows the
   preset with a suggested point where the session is now; click elsewhere to choose another.
 - The room keeps hearing the set as it was until you click **Adjust Running Set**. That shows the
-  overview in the session view, where you confirm it. **Cancel** drops your changes.
+  overview in the live window, where you confirm it. **Cancel** drops your changes.
 
 A change to the curve's shape takes over at a good point within about a minute, with a longer
 transition.
@@ -583,7 +674,7 @@ extra.
 ## If the app or the computer stops during a session
 
 - While a session runs, the app keeps a **backup** of the set as it plays in your Downloads folder,
-  "TrackCatalogue session backup.wav". The session view says how far it's ready. As a last resort,
+  "TrackCatalogue session backup.wav". The live window says how far it's ready. As a last resort,
   play it in any player from the time where the session was.
 - The next time you start Track Catalogue, it offers **Continue Session**. It opens the set with
   your changes and plays from where the music stopped, fading in.
@@ -688,14 +779,16 @@ corrections, removing songs, re-training) and in a set (the curve, songs, transi
 | Delete | Remove from the pool |
 | Double-click | Play the song |
 
-**The session view**
+**The live window**
 
 | Keys | What it does |
 |:---|:---|
-| Space | Play or pause |
+| Space | Start; then play or pause |
+| T | Talk: dip the music, and bring it back |
+| F | Fade out and pause, and fade back in |
 | ← and → | 15 seconds back or forward |
 | F11 | Full screen |
-| Esc | Back to the set |
+| Esc | Leave full screen (nothing else) |
 
 # When something isn't right
 

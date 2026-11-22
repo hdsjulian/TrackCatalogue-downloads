@@ -92,6 +92,18 @@ sie sie aus dem Katalog entfernt.
 **Entfernen** (oder die Taste Entf) nimmt die ausgewählten Songs aus dem Katalog. Die Dateien
 bleiben, wo sie sind.
 
+### Songs ohne Tags
+
+Manche Dateien haben keine Tags: keinen Künstler, Titel oder kein Album in sich. Dann liest die
+App die Namen aus der Datei und ihren Ordnern: `Künstler - Album\03 Titel.wav`,
+`Künstler\Album\03 Titel.flac` und Bandcamps `Künstler - Album - 03 Titel.mp3` ergeben Künstler,
+Album und Titel.
+
+Für jeden Ordner solcher Songs zeigt ein Fenster **Songs ohne Tags**, was gelesen wurde.
+Korrigiere, was nicht stimmt, und drück **Bestätigen**; die Dateien selbst bleiben unverändert.
+**Überspringen** lässt die Songs, wie sie gelesen wurden, und **Alle überspringen** tut das für
+jeden Ordner, der noch wartet. Strg+Z nimmt eine Bestätigung zurück.
+
 ## Die Spalten
 
 | Spalte | Was sie zeigt |
@@ -206,7 +218,29 @@ Hier korrigierst du die Tags der Datei (nur in der App; die Datei wird nicht ver
 **Zurück zur Datei** holt die Tags der Datei zurück; **Auf automatisch zurücksetzen** löscht
 alle deine Werte für den Song.
 
+**Weitere Kopien**: dieselbe Aufnahme in anderen Dateien, zum Beispiel ein MP3 eines Songs, den du
+auch als FLAC hast, oder dieselbe Datei in zwei Ordnern. Der Katalog zeigt so einen Song nur einmal,
+als seine beste Kopie (verlustfrei vor MP3, dann die höhere Qualität); die anderen Kopien stehen hier
+mit Format und Dateiname. Sets nehmen die beste Kopie, oder die nächstbeste, wenn ihr Laufwerk nicht
+angeschlossen ist, und deine Bewertungen an einer Kopie gelten für den Song. Die App erkennt Kopien
+daran, wie sie klingen; andere Schreibweisen in den Tags spielen keine Rolle, und ein Radio-Edit oder
+ein Remaster bleibt ein eigener Song. Sind zwei Dateien doch nicht derselbe Song, trennt
+**Das sind verschiedene Songs** sie dauerhaft.
+
 Felder werden übernommen, wenn du die Eingabetaste drückst oder das Feld verlässt.
+
+## Tonarten
+
+Die Analyse findet die **Tonart** jedes Songs, etwa „a-Moll“, für den ganzen Song und für jeden
+Teil, an dem sich die Musik ändert. Songs ohne klare Tonart, etwa Trommeln oder ein Drone, zeigen
+„–“. Die Spalte **Tonart** zeigt sie, und in den Details des Songs legst du mit **Tonart** deine
+eigene fest, oder **Keine klare Tonart**.
+
+Beim Generieren bevorzugt die App Nachbarn, deren Tonarten dort zusammenpassen, wo sie sich
+überlappen. Die Tonart wiegt nie schwerer als die Intensitätskurve: Sie entscheidet nur zwischen
+Songs, die etwa gleich gut passen. In der Zeitleiste zeigt ein kleiner orangefarbener Punkt an
+der Marke eines Übergangs, dass die Tonarten dort nicht zusammenpassen, und die Nahansicht des
+Übergangs nennt beide. Songs spielen immer in ihrer eigenen Tonhöhe.
 
 ## Mehrere Songs auf einmal ändern
 
@@ -324,7 +358,38 @@ Die Linien zwischen den Phasen hängen an der Kurve: Wenn du einen Punkt der Kur
 die Phasen daneben mit, sodass eine Phase bei ihrem Teil der Kurve bleibt.
 
 Phasen sind Beschriftungen für dich: Sie ändern nicht, welche Songs gewählt werden. Sie werden
-beim Abspielen gezeigt und in der Session-Ansicht.
+beim Abspielen gezeigt und im Live-Fenster.
+
+## Vorlagen
+
+Die Form eines Sets lässt sich als **Vorlage** behalten: Kurve, Phasen, Länge, Tempolinie,
+höchste BPM, Art der Übergänge und Länge der Überblendungen, aber nicht seine Songs.
+
+- **Kurve ▾ › Als Vorlage sichern…** sichert die Form des Sets unter einem Namen. Derselbe Name
+  ersetzt eine Vorlage.
+- Die Vorlagen stehen in **Kurve ▾** unter den fertigen Formen: Wähl eine, um dem offenen Set
+  ihre Form zu geben.
+- Im Katalog beginnt das **▾** neben **Neues Set** ein neues Set aus einer Vorlage.
+- **Kurve ▾ › Vorlagen verwalten** bietet für jede **Exportieren…** (eine Datei zum
+  Weitergeben), **Importieren…** und **Löschen…**.
+
+## Die Optionen des Sets
+
+**Optionen ▾** enthält ein paar Einstellungen für das ganze Set:
+
+- **Beginnt um…**: wann die Sitzung beginnen soll, etwa 10:15. Die Zeitachse und die Reihenfolge
+  zeigen dann auch Uhrzeiten, etwa „0:30 · 10:45“. Leer lassen für keine.
+- **Gruppe**: für wen das Set ist, etwa „Dienstagsgruppe“. Generieren bevorzugt dann Songs, die
+  die anderen gesicherten Sets der Gruppe nicht verwenden, und zwar umso mehr, je kürzer ihr
+  Sichern zurückliegt. In den **Einstellungen** legst du fest, wann so ein Song wieder frisch ist:
+  nach 4 Wochen, 8 Wochen, 3 Monaten oder nie. Die Notizen im Pool sagen etwa „Dienstagsgruppe
+  hatte ihn vor 3 Wochen“.
+- **Vorlauf** und **Nachlauf**: Songs aus dem Pool, die vor und nach dem Set immer wieder spielen
+  (siehe Live spielen). Hak die Songs im jeweiligen Menü an.
+- **In Minuten planen**: Jede Phase bekommt eine Länge in Minuten, und die Länge des Sets ist ihre
+  Summe. **Minuten der Phasen…** fragt sie in einer Zeile ab, etwa „15, 20, 15, 10“. Die Kurve
+  behält in jeder Phase ihre Form, gestaucht oder gedehnt, und das Set kann bis zu 5 Minuten
+  kürzer oder länger werden. Solange das an ist, zeigen die Längenfelder nur das Ergebnis.
 
 ## Höchste BPM
 
@@ -403,6 +468,13 @@ des Songs.
 
 **Gesetzt** heißt „irgendwo in diesem Set“. Soll ein Song genau dort bleiben, wo er ist,
 **fixier** ihn stattdessen (siehe unten).
+
+**Wiederholen** (Rechtsklick) erlaubt Generieren, einen Song mehrmals zu verwenden, jedes Mal
+einen anderen Teil: das Intro, die Mitte, das Outro oder einen Abschnitt, der heraussticht.
+**Andere Teile** spielt jeden Teil höchstens einmal; **Auch die Mitte wieder** lässt auch die
+Mitte wiederkommen. Zwei Teile eines Songs folgen nie direkt aufeinander. Die Notizen zeigen „↻“
+mit der Wahl. Ziehst du so einen Song auf die Zeitleiste, wenn er schon im Set ist, kommt sein
+nächster Teil dazu.
 
 Beim Wählen setzt Generieren außerdem nie mehr als zwei Songs desselben Künstlers hintereinander.
 
@@ -545,23 +617,49 @@ aufeinandertreffen.
 Was du hörst, ist genau das, was der Export wird, mit jedem Übergang und mit allen Songs auf
 dieselbe Lautheit angeglichen.
 
-## Die Session-Ansicht
+## Live spielen
 
-![Die Session-Ansicht](images/de/session.png)
+![Das Live-Fenster](images/de/session.png)
 
-**Session** öffnet eine große, dunkle, ruhige Ansicht für den Raum der Sitzung: die Phase, die
-Zeit, den Song, der spielt, und den nächsten, und die Form des Sets mit der aktuellen Stelle. Sie
-ändert das Set nur über **Ändern**, und nichts erreicht den Raum, bevor du bestätigst. Ein
-versehentlicher Klick kann also keinen Schaden anrichten.
+**Live gehen** öffnet das Live-Fenster für den Raum der Sitzung: groß, dunkel und ruhig, mit
+einem roten **LIVE**-Zeichen. Es öffnet sich **bereit, aber still**: Es prüft, ob die Laufwerke
+angeschlossen sind und die Sicherung begonnen hat, und der Raum hört nichts, bis du auf das große
+rote **Start** drückst (oder die Leertaste). Dann spielt das Set von Anfang an.
+
+Es zeigt die Phase und wie lange sie noch dauert („HEART · NOCH 12:30“), die Zeit im Set und wann
+es wirklich endet, den Song, der spielt, und den nächsten, die Form des Sets mit einer roten
+Abspielposition und die Uhrzeit.
 
 - **Leertaste** spielt und pausiert; **−15 s** und **+15 s** (oder ← und →) springen.
-- **Vollbild** (oder F11) füllt den Bildschirm.
-- **Fertig** (oder Esc) beendet die Session und geht zurück zum Set.
+- **Sprechen** (T) senkt die Musik, damit du sprechen kannst, und holt sie zurück.
+- **Ausblenden** (F) blendet in ein paar Sekunden aus und pausiert; noch einmal, und es blendet
+  wieder ein.
+- **+5**, **+10** und **+20 Min.** fügen sofort Songs nach dem laufenden ein; **Nächster Song**
+  übergibt in etwa 20 Sekunden an den nächsten Song. Beides lässt sich zurücknehmen, bis es zu
+  hören ist.
+- **Ändern…** öffnet Verlängern, Kürzen, Phase abschließen und Set anpassen, mit einer Übersicht
+  vorher (siehe unten).
+- **Set zeigen** zeigt das Fenster des Sets. Solange es live ist, ist das Set unter einem roten
+  Balken gesperrt; **Zurück zu Live** führt zurück.
+- **Sitzung beenden** (oder das Fenster schließen) fragt erst nach, hält dann die Musik an und
+  gibt das Set wieder frei.
+- **Vollbild** (oder F11) füllt den Bildschirm; Esc verlässt es und tut hier sonst nichts.
+
+Es kann immer nur ein Set live sein. Im Fenster des Sets heißt die Wiedergabetaste **Vorhören**:
+Sie spielt das Set für dich, Live gehen spielt es für den Raum.
+
+### Vorlauf und Nachlauf
+
+Hat das Set einen **Vorlauf** (Optionen ▾), erscheint vor dem Start **Vorlauf**: Seine Songs
+spielen der Reihe nach und immer wieder, während alle ankommen. **Start** blendet ihn unter den
+ersten Song des Sets. Ein **Nachlauf** blendet sich über die letzten 20 Sekunden des Sets ein und
+spielt weiter bis **Nachlauf stoppen**, das ihn in 10 Sekunden ausblendet. Beides zählt nicht zur
+Länge des Sets oder zu seinem Export.
 
 # Ein Set ändern, während es läuft
 
 Manchmal braucht der Raum etwas anderes als geplant: länger auf dieser Stufe, ein früheres Ende
-oder früher die nächste Phase. **Ändern** in der Session-Ansicht macht das, während die Musik läuft.
+oder früher die nächste Phase. **Ändern** im Live-Fenster macht das, während die Musik läuft.
 
 ![Ändern: die Übersicht einer Änderung, bevor du sie bestätigst](images/de/session-change.png)
 
@@ -607,7 +705,7 @@ weiterspielt. Ein Balken oben sagt **Das laufende Set wird angepasst**.
   Vorlage mit einem vorgeschlagenen Punkt, wo die Session gerade ist; klick woanders hin, um einen
   anderen zu wählen.
 - Der Raum hört das Set wie bisher, bis du auf **Laufendes Set anpassen** klickst. Das zeigt die
-  Übersicht in der Session-Ansicht, wo du bestätigst. **Abbrechen** verwirft deine Änderungen.
+  Übersicht im Live-Fenster, wo du bestätigst. **Abbrechen** verwirft deine Änderungen.
 
 Eine Änderung an der Form der Kurve übernimmt an einer guten Stelle innerhalb von etwa einer
 Minute, mit einem längeren Übergang.
@@ -622,7 +720,7 @@ Musik-Ordner. Eine Session ohne Änderungen speichert nichts extra.
 ## Wenn die App oder der Computer während einer Session ausgeht
 
 - Während einer Session hält die App eine **Sicherung** des Sets, wie es läuft, in deinem
-  Downloads-Ordner: „TrackCatalogue session backup.wav“. Die Session-Ansicht zeigt, wie weit sie
+  Downloads-Ordner: „TrackCatalogue session backup.wav“. Das Live-Fenster zeigt, wie weit sie
   fertig ist. Im Notfall spielst du sie in irgendeinem Player ab der Zeit, wo die Session war.
 - Beim nächsten Start bietet Track Catalogue **Session fortsetzen** an. Es öffnet das Set mit
   deinen Änderungen und spielt dort weiter, wo die Musik aufgehört hat, mit einem Einblenden.
@@ -734,14 +832,16 @@ Strg+Z macht jede Änderung rückgängig, Strg+Y (oder Strg+Umschalt+Z) wiederho
 | Entf | Aus dem Pool entfernen |
 | Doppelklick | Den Song abspielen |
 
-**Die Session-Ansicht**
+**Das Live-Fenster**
 
 | Tasten | Was sie bewirken |
 |:---|:---|
-| Leertaste | Abspielen oder Pause |
+| Leertaste | Start; danach Abspielen oder Pause |
+| T | Sprechen: Musik senken und zurückholen |
+| F | Ausblenden und pausieren, und wieder einblenden |
 | ← und → | 15 Sekunden zurück oder vor |
 | F11 | Vollbild |
-| Esc | Zurück zum Set |
+| Esc | Vollbild verlassen (sonst nichts) |
 
 # Wenn etwas nicht stimmt
 
