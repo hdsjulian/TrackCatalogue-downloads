@@ -229,6 +229,35 @@ Songs, die etwa gleich gut passen. In der Zeitleiste zeigt ein kleiner orangefar
 Marke eines Übergangs, dass die Tonarten dort nicht zusammenpassen, und die Details des Übergangs
 nennen beide. Songs spielen immer in ihrer eigenen Tonhöhe.
 
+## Pegel (Level)
+
+In einem Set spielt jeder Song gleich laut: Die App gleicht sie nach Messung aus. Klingt einer
+neben den anderen trotzdem zu laut oder zu leise, spiel ihn ab und zieh den Regler **Level** im
+Inspector: −6 bis +6 dB, in Schritten von 0,5 dB, und du hörst die Änderung sofort. Lässt du los,
+bleibt sie, für diesen Song in jedem Set; ein Doppelklick auf den Regler stellt ihn zurück auf
+**As levelled**. Die Vorschau spielt Songs so laut wie ein Set, du hörst also, was das Set tun
+wird. Der Pegel ändert die Intensität eines Songs nicht. Im Set sagen die Details des Songs
+„Level +1.5 dB, set in the catalogue.“
+
+## Teile auslassen (Leave Out Parts)
+
+Um einen Abschnitt eines Songs auszulassen, etwa eine lange Stille oder einen gesprochenen Teil,
+klick unter seiner Intensität im Inspector auf **Leave Out Parts…** und zieh über den Abschnitt.
+Seine Kanten rasten dort ein, wo sich die Musik ändert, oder auf einem Beat; zieh eine Kante, um sie
+zu verschieben. Klick einen Abschnitt an, um ihn auszuwählen: **Join** macht seine Überblendung
+kürzer oder länger, **Remove** nimmt ihn weg. Spiel den Song dabei ab: Er springt über die
+Abschnitte, mit einer kurzen Überblendung, einen Beat lang, oder 2 Sekunden ohne Beat.
+
+Dann:
+
+- **Edit This Song** behält die Abschnitte beim Song: Er lässt sie in jedem Set, in der Vorschau
+  und beim Export aus. Die Datei wird nicht verändert. **Play the Whole Song** holt sie zurück.
+- **Save as New Song…** fügt einen zweiten Song hinzu, „Titel (edited)“, mit allem, was du bei
+  diesem eingestellt hast. Die App fragt, ob er eine eigene Datei sein soll: **Its Own File…**
+  schreibt eine FLAC-Datei (bei einer WAV eine WAV) neben das Original, mit Titel, Künstler, Album
+  und Cover; **No, Just a New Song** fügt einen Song hinzu, der die Originaldatei ohne diese Teile
+  spielt. Die Originaldatei wird nie verändert.
+
 ## Mehrere Songs auf einmal ändern
 
 Wähl mehrere Songs aus (⌘-Klick, ⇧-Klick oder ⌘A) und klick mit rechts für **Rhythm**,
@@ -505,6 +534,23 @@ Die App macht jede Überblendung etwa so lang wie das Intro des kommenden Songs,
 und 3 Minuten. Ohne Intro sind es 30 Sekunden zwischen zwei Songs mit Beat und eine Minute, wenn
 einer keinen hat. Sie ist nie länger als die Hälfte eines der beiden Songs. **Crossfades** in den
 Optionen des Sets macht alle kürzer oder länger.
+
+## Blendenformen (Fades)
+
+Ein Crossfade oder ein Beatmatched Blend blendet in einer von vier Formen:
+
+- **Even:** Ein Song wird leiser, während der andere lauter wird.
+- **Smooth:** Beide halten länger, dann wechseln sie schnell in der Mitte.
+- **Slow Out:** Der alte Song bleibt länger, der neue kommt früh.
+- **Slow In:** Der alte Song geht früh, der neue schleicht sich hinein.
+
+Auf **Automatic** wählt die App nach der Musik: Smooth zwischen zwei Songs ohne Beat, Slow Out, wo
+das Set ansteigt, Slow In, wo es abfällt, sonst Even. **Fades › Shape** in den Optionen des Sets
+legt eine Form für das ganze Set fest; **Fade** in den Details eines Übergangs legt sie für diesen
+Übergang fest. Bass Swap, EQ Blend und Filter Sweep behalten ihre eigenen Kurven.
+
+**End with a fade**, an derselben Stelle, lässt den letzten Song in die Stille ausblenden, über
+10 Sekunden bis 2 Minuten, in einer eigenen Form.
 
 ## Beats angleichen
 

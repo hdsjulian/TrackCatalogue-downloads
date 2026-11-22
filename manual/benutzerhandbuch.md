@@ -242,6 +242,37 @@ Songs, die etwa gleich gut passen. In der Zeitleiste zeigt ein kleiner orangefar
 der Marke eines Übergangs, dass die Tonarten dort nicht zusammenpassen, und die Nahansicht des
 Übergangs nennt beide. Songs spielen immer in ihrer eigenen Tonhöhe.
 
+## Pegel
+
+In einem Set spielt jeder Song gleich laut: Die App gleicht sie nach Messung aus. Klingt einer
+neben den anderen trotzdem zu laut oder zu leise, spiel ihn ab und zieh **Pegel** in seinen
+Details: −6 bis +6 dB, in Schritten von 0,5 dB, und du hörst die Änderung sofort. Lässt du los,
+bleibt sie, für diesen Song in jedem Set; **↺** stellt ihn wieder auf „Wie ausgeglichen“. Die
+Vorschau spielt Songs so laut wie ein Set, du hörst also, was das Set tun wird. Der Pegel ändert
+die Intensität eines Songs nicht. Im Set zeigt die Zeile des Songs „Pegel +1,5 dB, im Katalog
+eingestellt“.
+
+## Teile auslassen
+
+Um einen Abschnitt eines Songs auszulassen, etwa eine lange Stille oder einen gesprochenen Teil,
+klick unter seiner Intensität in den Details des Songs auf **Teile auslassen…** und zieh über den
+Abschnitt. Seine Kanten rasten dort ein, wo sich die Musik ändert, oder auf einem Beat; zieh eine
+Kante, um sie zu verschieben. Klick einen Abschnitt an, um ihn auszuwählen: **−** und **+** machen
+seinen Übergang kürzer oder länger, **Entfernen** nimmt ihn weg. Spiel den Song dabei ab: Er
+springt über die Abschnitte, mit einer kurzen Überblendung, einen Beat lang, oder 2 Sekunden ohne
+Beat.
+
+Dann:
+
+- **Diesen Song ändern** behält die Abschnitte beim Song: Er lässt sie in jedem Set, in der
+  Vorschau und beim Export aus. Die Datei wird nicht verändert. **Ganzen Song spielen** holt sie
+  zurück.
+- **Als neuen Song sichern…** fügt einen zweiten Song hinzu, „Titel (edited)“, mit allem, was du
+  bei diesem eingestellt hast. Die App fragt, ob er eine eigene Datei sein soll: **Ja** schreibt
+  eine FLAC-Datei (bei einer WAV eine WAV) neben das Original, mit Titel, Künstler, Album und Cover;
+  **Nein** fügt einen Song hinzu, der die Originaldatei ohne diese Teile spielt. Die Originaldatei
+  wird nie verändert.
+
 ## Mehrere Songs auf einmal ändern
 
 Wähl mehrere Songs aus (Strg+Klick, Umschalt+Klick oder Strg+A) und klick sie mit der rechten
@@ -438,8 +469,9 @@ einen Song verwenden.
 ![Links der Pool, rechts ein im Set ausgewählter Song mit den Songs, die an seine Stelle passen
 würden](images/de/pool.png)
 
-Der Pool listet die Songs, die dieses Set verwenden darf. Die erste Spalte zeigt die Regel jedes
-Songs:
+Der Pool listet die Songs, die dieses Set verwenden darf. Um lange Titel zu sehen, zieh die Kante
+zwischen Pool und Set nach rechts; der Pool behält diese Breite in jedem Set. Die erste Spalte
+zeigt die Regel jedes Songs:
 
 | Zeichen | Bedeutung |
 |----|------------------------|
@@ -562,6 +594,25 @@ Minute, wenn einer keinen hat. Nie mehr als die Hälfte eines der beiden Songs.
 
 **Überblendungen** im Set-Fenster macht alle **Kürzer**, **Normal**, **Länger** oder **Viel
 länger** (bis doppelt so lang). Längere Überblendungen heißen mehr Songs in derselben Zeit.
+
+## Blendenformen
+
+Ein Crossfade oder ein Beatmatch-Blend blendet in einer von vier Formen:
+
+- **Gleichmäßig:** Ein Song wird leiser, während der andere lauter wird.
+- **Weich:** Beide halten länger, dann wechseln sie schnell in der Mitte.
+- **Langsam raus:** Der alte Song bleibt länger, der neue kommt früh.
+- **Langsam rein:** Der alte Song geht früh, der neue schleicht sich hinein.
+
+Auf **Automatisch** wählt die App nach der Musik: Weich zwischen zwei Songs ohne Beat, Langsam
+raus, wo das Set ansteigt, Langsam rein, wo es abfällt, sonst Gleichmäßig. **Optionen ›
+Blendenform** legt eine Form für das ganze Set fest; **Blende** in den Einstellungen eines
+Übergangs legt sie für diesen Übergang fest. Bass-Swap, EQ-Blend und Filter-Sweep behalten ihre
+eigenen Kurven.
+
+**Optionen › Mit einer Ausblendung enden** lässt den letzten Song in die Stille ausblenden, über
+10 Sekunden bis 2 Minuten (**Länge der Ausblendung**), in einer eigenen Form (**Form der
+Ausblendung**).
 
 ## Im Beat
 

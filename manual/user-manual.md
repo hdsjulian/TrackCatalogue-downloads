@@ -223,6 +223,32 @@ Keys never outweigh the intensity curve: they only decide between songs that fit
 well. In the timeline, a small orange dot by a transition's mark says the keys clash there, and
 the transition's close-up names both. Songs always play at their own pitch.
 
+## Level
+
+In a set, every song plays equally loud: the app levels them by measurement. If one still sounds
+too loud or too quiet next to the others, play it and drag **Level** in its details: −6 to +6 dB,
+in steps of 0.5 dB, and you hear the change at once. Let go and it's kept, for this song in every
+set; **↺** sets it back to as levelled. The preview plays songs as loud as a set does, so what you
+hear is what the set will do. The level doesn't change a song's intensity. In a set, the song's
+line says "level +1.5 dB, set in the catalogue".
+
+## Leaving parts out
+
+To leave a stretch of a song out, such as a long silence or a spoken part, click **Leave Out
+Parts…** under its intensity in the song's details, and drag across the stretch. Its edges snap to
+where the music changes, or to a beat; drag an edge to move it. Click a stretch to select it: **−**
+and **+** make its join shorter or longer, **Remove** takes it away. Play the song meanwhile: it
+jumps over the stretches with a short crossfade, one beat long, or 2 seconds without a beat.
+
+Then:
+
+- **Edit This Song** keeps the stretches with the song: it leaves them out in every set, the
+  preview and exports. The file isn't changed. **Play the Whole Song** brings them back.
+- **Save as New Song…** adds a second song, "Title (edited)", with everything you set on this one.
+  The app asks whether it should be its own file: **Yes** writes a FLAC (a WAV, for a WAV) next to
+  the original, with its title, artist, album and cover; **No** adds a song that plays the original
+  file without those parts. The original file is never changed.
+
 ## Changing several songs at once
 
 Select several songs (Ctrl+click, Shift+click or Ctrl+A) and right-click them for:
@@ -410,7 +436,8 @@ The catalogue's **Sets** column, the pool and a song's details show which other 
 
 ![The pool, left, and a song selected in the set, with the songs that would fit its place](images/pool.png)
 
-The pool lists the songs this set may use. The first column shows each song's rule:
+The pool lists the songs this set may use. To see long titles, drag the edge between the pool and
+the set to the right; the pool keeps that width in every set. The first column shows each song's rule:
 
 | Mark | Meaning |
 |----|------------------------|
@@ -526,6 +553,23 @@ either has none. It's never more than half of either song.
 
 **Crossfades** in the set window makes all of them **Shorter**, **Normal**, **Longer** or **Much
 Longer** (up to twice as long). Longer crossfades mean more songs in the same time.
+
+## Fade shapes
+
+A crossfade or a beatmatched blend fades in one of four shapes:
+
+- **Even:** one song sinks as the other rises.
+- **Smooth:** both hold longer, then cross quickly in the middle.
+- **Slow Out:** the old song lingers and the new one comes in early.
+- **Slow In:** the old song leaves early and the new one creeps in.
+
+On **Automatic**, the app picks by the music: Smooth between two songs without a beat, Slow Out
+where the set climbs, Slow In where it falls, and Even otherwise. **Options › Fade Shape** sets
+one shape for the whole set; **Fade** in a transition's settings sets one for that transition.
+Bass swaps, EQ blends and filter sweeps keep their own curves.
+
+**Options › End with a Fade** lets the last song fade to silence, over 10 seconds to 2 minutes
+(**End Fade Length**), in a shape of its own (**End Fade Shape**).
 
 ## Beatmatching
 
