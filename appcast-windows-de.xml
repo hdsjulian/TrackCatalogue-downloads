@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Track Catalogue for Windows</title>
+    <item>
+      <title>Track Catalogue 0.6</title>
+      <pubDate>Sun, 22 Nov 2026 21:28:39 GMT</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>0.6</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Updates aus der App.</b> Track Catalogue sucht selbst nach neuen Versionen und fragt, bevor es eine installiert: Installieren, Später oder Diese Version überspringen. Während ein Set spielt, fragt es nie. Nach einem Update zeigt dieses Fenster, was neu ist. In den Einstellungen kannst du die Suche ausschalten, und mit „Nach Updates suchen…“ selbst suchen.</li><li><b>Formen der Überblendung.</b> Überblendungen haben eine von vier Formen: Gleichmäßig, Weich, Langsam raus oder Langsam rein. Die Musik wählt sie, außer du wählst eine für das Set oder einen Übergang. Ein Set kann mit einem Ausblenden zur Stille enden.</li><li><b>Teile eines Songs auslassen.</b> „Teile auslassen…“ in den Details eines Songs markiert Stellen, die übersprungen werden, etwa ein langes gesprochenes Intro. Sets spielen den Song ohne sie, mit kurzen Überblendungen an den Schnitten. „Als neuen Song sichern…“ lässt das Original, wie es war, und kann die kürzere Fassung als eigene Datei schreiben.</li><li><b>Die Lautstärke eines Songs nach Gehör.</b> Ein Regler „Pegel“ in den Details eines Songs macht ihn lauter oder leiser als angeglichen, in jedem Set. Die Vorschau im Katalog spielt jetzt angeglichen, wie ein Set.</li><li><b>Ordner, die mit der App geöffnet</b> oder auf ihr Symbol gezogen werden, kommen in den Katalog, wie bei „Ordner hinzufügen“.</li><li><b>Windows:</b> „Live gehen“ ist ein roter Knopf, der Pool im Set-Fenster lässt sich breiter ziehen, und ein Absturz ist behoben, der passieren konnte, wenn ein geänderter Übergang über das Ende eines Songs von einer CD hinaus spielte.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.6/TrackCatalogue-Setup-0.6.exe" length="23911555" type="application/octet-stream" sparkle:edSignature="qNov+dGVG89XINWGrQYtA64ZMN6BW8fp3ON1Uyp36oqB6pujibFwurwy08KIVLTfil/cCSVZbT0nl5rPYi9HBA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+  </channel>
+</rss>

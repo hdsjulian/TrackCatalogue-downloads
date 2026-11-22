@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Track Catalogue for Windows</title>
+    <item>
+      <title>Track Catalogue 0.6</title>
+      <pubDate>Sun, 22 Nov 2026 21:28:39 GMT</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>0.6</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Updates from inside the app.</b> Track Catalogue checks for new versions by itself and asks before it installs one: Install, Later or Skip This Version. It never asks while a set plays. After an update, this window shows what's new. You can switch the checks off in Settings, and check by hand with Check for Updates….</li><li><b>Fade shapes.</b> Crossfades fade in one of four shapes, Even, Smooth, Slow Out or Slow In, picked by the music unless you choose one for the set or a transition. A set can end with a fade to silence.</li><li><b>Leaving out parts of a song.</b> Leave Out Parts… in a song's details marks stretches to skip, such as a long spoken intro. Sets play the song without them, with short crossfades at the joins. Save as New Song… keeps the original as it was, and can write the shorter version as its own file.</li><li><b>A song's level by ear.</b> A Level slider in a song's details makes it louder or quieter than levelled, in every set. The catalogue's preview plays levelled now, like a set.</li><li><b>Folders opened with the app,</b> or dropped on its icon, are added to the catalogue, like Add Folder.</li><li><b>Windows:</b> Go Live is a red button, the pool in the set window can be made wider, and a crash is fixed that could happen when a changed transition played past the end of a song from a CD.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.6/TrackCatalogue-Setup-0.6.exe" length="23911555" type="application/octet-stream" sparkle:edSignature="qNov+dGVG89XINWGrQYtA64ZMN6BW8fp3ON1Uyp36oqB6pujibFwurwy08KIVLTfil/cCSVZbT0nl5rPYi9HBA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+  </channel>
+</rss>
