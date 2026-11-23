@@ -115,6 +115,8 @@ noch wartet. ⌘Z nimmt eine Bestätigung zurück.
 | Rhythm | **Regular** (das Tempo bleibt gleich), **Variable** (es gibt einen Puls, aber er schwankt) oder **Free** (kein verlässlicher Puls, etwa Drones oder Gesang). |
 | Intensity | Von 1 (am ruhigsten) bis 10 (am intensivsten), als farbiges Kästchen: gefüllt für deine Bewertung, umrandet für den automatischen Wert. |
 | Direction | Wo der Song auf die Kurve des Sets gehört: **Up** (aufwärts), **Steady** (gleichbleibend), **Down** (abwärts) oder **Either** (egal). |
+| Vocals | Ob der Song Gesang oder Sprache hat: **None** (kein), **Some** (etwas) oder **Throughout** (durchgehend). Leer, bis du es festlegst. |
+| Words | Ob man seine Worte versteht: **Understood** (verständlich), **Not Understood** (nicht verständlich) oder **None** (keine). **Unknown** (unbekannt), solange seine Sprache nicht bekannt ist. Zeig mit der Maus darauf, um die Sprache zu sehen. |
 | Character | Ein paar Worte, wie er klingt, etwa „driving beat, percussive, bright“. |
 | Tags | Deine eigenen Worte, etwa „Trommeln, Gesang, Herz“. |
 | Sets | Wie viele gespeicherte Sets den Song verwenden. |
@@ -239,6 +241,40 @@ bleibt sie, für diesen Song in jedem Set; ein Doppelklick auf den Regler stellt
 wird. Der Pegel ändert die Intensität eines Songs nicht. Im Set sagen die Details des Songs
 „Level +1.5 dB, set in the catalogue.“
 
+## Gesang und Worte (Vocals, Words)
+
+Ein Song, dessen Worte man versteht, holt einen in den Kopf. Ein Gesang auf Sanskrit, Summen oder
+das „Aah“ eines Chors tun das nicht. Deshalb hat jeder Song zwei Werte:
+
+- **Vocals** (Gesang): ob er Gesang oder Sprache hat: **None**, **Some** oder **Throughout** (kein,
+  etwas, durchgehend). Das legst du selbst fest.
+- **Words** (Worte): ob man seine Worte versteht: **Understood**, **Not Understood** oder **None**
+  (verständlich, nicht verständlich, keine).
+
+Eine Sprache wählst du nie. Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, einer
+öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler und Titel werden
+gesendet. Ist die Sprache eine, die man versteht, steht bei Words **Understood**; bei jeder anderen
+**Not Understood**; bei einem Song ohne Text **None**. Solange die Sprache nicht bekannt ist, steht
+dort **Unknown**, in hellem Grau. Automatische Werte sind grau, deine in normaler Schrift, und
+**deine gelten immer**. Ein Song, bei dem du Vocals **None** festgelegt hast, hat keine Worte.
+
+Leg beide im Inspector fest, oder klick mehrere Songs mit rechts an und wähl **Vocals** oder
+**Words**. **Words › Look Up Language Again** oder **Look Up Again** im Inspector fragt MusicBrainz
+noch einmal. Die Zeile **Language** im Inspector sagt, was gefunden wurde, etwa „German, from
+MusicBrainz“. Die Spalten Vocals und Words blendest du wie jede andere ein und aus (Rechtsklick auf
+die Kopfzeile).
+
+**TrackCatalogue › Settings…** hat dafür zwei Einstellungen:
+
+- **Look up song languages online**: an, solange du es nicht ausschaltest. Aus, wird nichts
+  gesendet, und Words bleibt Unknown, solange du es nicht festlegst.
+- **Understood languages**: Hak die Sprachen an, die deine Gruppen verstehen. Am Anfang sind
+  Englisch und die Sprache deines Macs angehakt. Änderst du die Liste, ändern sich die Words aller
+  Songs auf einmal.
+
+Ein Set kann Songs mit verständlichen Worten weglassen: siehe „Die Optionen des Sets“ unter *Ein
+Set machen*.
+
 ## Teile auslassen (Leave Out Parts)
 
 Um einen Abschnitt eines Songs auszulassen, etwa eine lange Stille oder einen gesprochenen Teil,
@@ -336,6 +372,17 @@ BPM“. Ein Klick darauf zeigt:
 - **Loops**: die Songs von **Pre Loop** (Vorlauf) und **Post Loop** (Nachlauf), aus dem Pool
   hinzugefügt (siehe Live spielen).
 - **Other sets**: **Prefer songs not used in other sets** und **In production** (siehe unten).
+- **Understood Words** (verständliche Worte): ob Generate Songs verwendet, deren Worte man versteht
+  (siehe „Gesang und Worte“ unter *Die Songs richtig erfassen*):
+  - **Include**: Es verwendet sie wie alle anderen.
+  - **Exclude**: Es lässt sie im ganzen Set weg, auch in Übergängen.
+  - **Per Phase**: Es lässt sie in den Phasen weg, die du wählst: Klick eine Phase im Streifen
+    über der Kurve mit rechts an und wähl **Leave Out Understood Words**.
+
+  Fixierte Songs bleiben, wo sie sind. Songs, deren Worte noch unbekannt sind, können verwendet
+  werden: Der Hinweis unter der Auswahl sagt, wie viele solche Songs der Pool hat. Prolong, Shorten
+  und Change the Set halten sich während des Abspielens an dieselbe Regel. Kann der Pool das Set
+  ohne sie nicht füllen, sagt Generate, wo sie weggelassen wurden.
 
 ## Generieren
 
@@ -378,18 +425,22 @@ des klassischen Bogens: **Evocative**, **Breakthrough**, **Heart** und **Meditat
 
 - Zieh die Linie zwischen zwei Phasen, um sie zu verschieben.
 - Doppelklick auf den Namen einer Phase benennt sie um.
-- Rechtsklick für **Rename…**, **Add Phase Here** und **Remove Phase**.
+- Rechtsklick für **Rename…**, **Add Phase Here** und **Remove Phase**. Steht **Understood Words**
+  des Sets auf **Per Phase**, bietet das Menü auch **Leave Out Understood Words**.
 
 Die Linien zwischen den Phasen hängen an der Kurve: Wenn du einen Punkt der Kurve ziehst, wandern
 die Phasen daneben mit, sodass eine Phase bei ihrem Teil der Kurve bleibt.
 
-Phasen sind Beschriftungen für dich: Sie ändern nicht, welche Songs gewählt werden. Sie werden beim
-Abspielen gezeigt und in der Live-Ansicht.
+Phasen sind Beschriftungen für dich: Sie ändern nicht, welche Songs gewählt werden, es sei denn,
+eine Phase lässt verständliche Worte weg (siehe „Die Optionen des Sets“). Eine solche Phase hat
+hinter ihrem Namen ein kleines durchgestrichenes Textsymbol. Phasen werden beim Abspielen gezeigt
+und in der Live-Ansicht.
 
 ## Vorlagen
 
 Die Form eines Sets lässt sich als **Vorlage** (Template) behalten: Kurve, Phasen, Länge, Tempolinie,
-höchste BPM, Art der Übergänge und Länge der Überblendungen, aber nicht seine Songs.
+höchste BPM, Art der Übergänge, Länge der Überblendungen und verständliche Worte, aber nicht seine
+Songs.
 
 - Im Menü der Kurve sichert **Save as Template…** die Form des Sets unter einem Namen. Derselbe Name
   ersetzt eine Vorlage.
@@ -792,6 +843,7 @@ und achte darauf, dass er verbunden ist und nicht der Ausgang ist, den der Raum 
 | Curve (Kurve) | Die geplante Intensität des Sets vom Anfang bis zum Ende. |
 | Phase | Ein benannter Abschnitt eines Sets, etwa „Heart“. |
 | Direction (Richtung) | Ob ein Song auf den Weg zu einem Höhepunkt gehört, danach, auf ein flaches Stück oder überallhin. |
+| Understood words (verständliche Worte) | Worte, die die Zuhörenden verstehen, weil sie in einer Sprache sind, die sie kennen. |
 | BPM | Schläge pro Minute: das Tempo eines Songs. |
 | Tempo line (Tempolinie) | Eine freiwillige Vorgabe für die Tempi der Songs über das Set. |
 | Transition (Übergang) | Das Überblenden von einem Song in den nächsten. |

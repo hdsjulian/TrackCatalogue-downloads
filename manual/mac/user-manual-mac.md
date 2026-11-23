@@ -112,6 +112,8 @@ confirmation.
 | Rhythm | **Regular** (the tempo holds steady), **Variable** (there's a pulse, but it drifts) or **Free** (no reliable pulse, such as drones or chant). |
 | Intensity | From 1 (calmest) to 10 (most intense), as a coloured chip: filled for your rating, outlined for the automatic value. |
 | Direction | Where the song belongs on the set's curve: **Up**, **Steady**, **Down** or **Either**. |
+| Vocals | Whether the song has singing or speech: **None**, **Some** or **Throughout**. Empty until you set it. |
+| Words | Whether people understand its words: **Understood**, **Not Understood** or **None**. **Unknown** while its language isn't known. Hover over it to see the language. |
 | Character | A few words about how it sounds, such as "driving beat, percussive, bright". |
 | Tags | Your own words, such as "drumming, chant, heart". |
 | Sets | How many saved sets use the song. |
@@ -229,6 +231,37 @@ song in every set; double-click the slider to set it back to **As levelled**. Th
 songs as loud as a set does, so what you hear is what the set will do. The level doesn't change a
 song's intensity. In a set, the song's details say "Level +1.5 dB, set in the catalogue."
 
+## Vocals and words
+
+A song whose words people understand pulls them into their heads. A chant in Sanskrit, humming or a
+choir's "aah" doesn't. So each song has two values:
+
+- **Vocals**: whether it has singing or speech: **None**, **Some** or **Throughout**. You set it
+  yourself.
+- **Words**: whether people understand its words: **Understood**, **Not Understood** or **None**.
+
+You never pick a language. The app looks up the language of a song's lyrics on MusicBrainz, a
+public music database, after the song is analysed. Only its artist and title are sent. If the
+language is one people understand, Words says **Understood**; any other says **Not Understood**;
+a song without lyrics says **None**. Until the language is known, Words says **Unknown**, in light
+grey. Automatic values are grey, yours are in normal text, and **yours always win**. A song you've
+set to Vocals **None** has no words.
+
+Set both in the Inspector, or right-click several songs and choose **Vocals** or **Words**.
+**Words › Look Up Language Again**, or **Look Up Again** in the Inspector, asks MusicBrainz again.
+The Inspector's **Language** line says what was found, such as "German, from MusicBrainz". The
+Vocals and Words columns can be shown or hidden like any other (right-click the header).
+
+**TrackCatalogue › Settings…** has two settings for this:
+
+- **Look up song languages online**: on unless you switch it off. Off, nothing is sent, and Words
+  stays Unknown unless you set it.
+- **Understood languages**: tick the languages your groups understand. English and the language
+  of your Mac are ticked at first. Changing the list changes every song's Words at once.
+
+A set can leave out songs whose words people understand: see "The set's options" under *Making a
+set*.
+
 ## Leaving parts out
 
 To leave a stretch of a song out, such as a long silence or a spoken part, click **Leave Out
@@ -319,6 +352,17 @@ Click it for:
 - **Loops**: the songs of the **Pre Loop** and the **Post Loop**, added from the pool (see Live
   play).
 - **Other sets**: **Prefer songs not used in other sets**, and **In production**.
+- **Understood Words**: whether Generate uses songs whose words people understand (see "Vocals
+  and words" under *Getting the songs right*):
+  - **Include**: it uses them like any other.
+  - **Exclude**: it leaves them out of the whole set, transitions included.
+  - **Per Phase**: it leaves them out in the phases you choose: right-click a phase in the strip
+    above the curve and choose **Leave Out Understood Words**.
+
+  Songs you've pinned stay where they are. Songs whose words aren't known yet may be used: the
+  note under the choice says how many such songs the pool has. Prolong, Shorten and Change the Set
+  keep to the same rule while the set plays. If the pool can't fill the set without them, Generate
+  says where they were left out.
 
 ## Generate
 
@@ -357,18 +401,20 @@ the classic arc: **Evocative**, **Breakthrough**, **Heart** and **Meditative**.
 
 - Drag the line between two phases to move it.
 - Double-click a phase's name to rename it.
-- Right-click for **Rename…**, **Add Phase Here** and **Remove Phase**.
+- Right-click for **Rename…**, **Add Phase Here** and **Remove Phase**. When the set's
+  **Understood Words** is **Per Phase**, the menu also has **Leave Out Understood Words**.
 
 The lines between phases are tied to the curve: when you drag one of the curve's points, the
 phases around it move along, so a phase stays with its part of the curve.
 
-Phases are labels for you: they don't change which songs are chosen. They're shown while the set
-plays, and in the live view.
+Phases are labels for you: they don't change which songs are chosen, unless a phase leaves out
+understood words (see "The set's options"). A phase that does has a small crossed-out text symbol
+after its name. Phases are shown while the set plays, and in the live view.
 
 ## Templates
 
 A set's shape can be kept as a **template**: its curve, phases, length, tempo line, maximum BPM,
-kind of transition and crossfade length, but not its songs.
+kind of transition, crossfade length and understood words, but not its songs.
 
 - In the curve's menu, **Save as Template…** saves the set's shape under a name. The same name
   replaces a template.
@@ -747,6 +793,7 @@ connected and isn't the output the room hears.
 | Curve | The set's planned intensity from start to end. |
 | Phase | A named stretch of a set, such as "Heart". |
 | Direction | Whether a song belongs on the way up to a peak, down from one, on a flat stretch, or anywhere. |
+| Understood words | Words people listening understand, because they're in a language they know. |
 | BPM | Beats per minute: a song's tempo. |
 | Tempo line | An optional guide for the songs' tempos across the set. |
 | Transition | The blend from one song into the next. |

@@ -114,6 +114,8 @@ jeden Ordner, der noch wartet. Strg+Z nimmt eine Bestätigung zurück.
 | Rhythmus | **Gleichmäßig** (das Tempo bleibt stabil), **Variabel** (es gibt einen Puls, aber er schwankt) oder **Frei** (kein verlässlicher Puls, etwa bei Drones oder Gesang). |
 | Intensität | Von 1 (am ruhigsten) bis 10 (am intensivsten). Ein Bereich wie „2–4“ ist eine Bewertung von dir. |
 | Richtung | Wohin der Song auf der Kurve des Sets gehört: **Aufwärts**, **Gleichbleibend**, **Abwärts** oder **Beliebig**. |
+| Gesang | Ob der Song Gesang oder Sprache hat: **Kein**, **Etwas** oder **Durchgehend**. Leer, bis du es festlegst. |
+| Worte | Ob man seine Worte versteht: **Verständlich**, **Nicht verständlich** oder **Keine**. **Unbekannt**, solange seine Sprache nicht bekannt ist. Zeig mit der Maus darauf, um die Sprache zu sehen. |
 | Charakter | Ein paar Worte dazu, wie er klingt, etwa „treibender Beat, perkussiv, hell“. |
 | Tags | Deine eigenen Worte, etwa „Trommeln, Gesang, Herz“. |
 | Sets | In wie vielen gespeicherten Sets der Song vorkommt. |
@@ -252,6 +254,39 @@ Vorschau spielt Songs so laut wie ein Set, du hörst also, was das Set tun wird.
 die Intensität eines Songs nicht. Im Set zeigt die Zeile des Songs „Pegel +1,5 dB, im Katalog
 eingestellt“.
 
+## Gesang und Worte
+
+Ein Song, dessen Worte man versteht, holt einen in den Kopf. Ein Gesang auf Sanskrit, Summen oder
+das „Aah“ eines Chors tun das nicht. Deshalb hat jeder Song zwei Werte:
+
+- **Gesang**: ob er Gesang oder Sprache hat: **Kein**, **Etwas** oder **Durchgehend**. Das legst
+  du selbst fest.
+- **Worte**: ob man seine Worte versteht: **Verständlich**, **Nicht verständlich** oder **Keine**.
+
+Eine Sprache wählst du nie. Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, einer
+öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler und Titel werden
+gesendet. Ist die Sprache eine, die man versteht, steht bei Worte **Verständlich**; bei jeder
+anderen **Nicht verständlich**; bei einem Song ohne Text **Keine**. Solange die Sprache nicht
+bekannt ist, steht dort **Unbekannt**, in hellem Grau. Automatische Werte sind grau, deine in
+normaler Schrift, und **deine gelten immer**. Ein Song, bei dem du Gesang **Kein** festgelegt hast,
+hat keine Worte.
+
+Leg beide in den Details des Songs fest, oder klick mehrere Songs mit rechts an und wähl
+**Gesang** oder **Worte**. **Worte › Sprache neu nachschlagen** oder **Neu nachschlagen** in den
+Details fragt MusicBrainz noch einmal. Die Zeile **Sprache** in den Details sagt, was gefunden
+wurde, etwa „Deutsch, von MusicBrainz“.
+
+**Datei › Einstellungen** hat dafür zwei Einstellungen:
+
+- **Sprache der Songs online nachschlagen**: an, solange du es nicht ausschaltest. Aus, wird nichts
+  gesendet, und Worte bleibt Unbekannt, solange du es nicht festlegst.
+- **Verstandene Sprachen**: Hak die Sprachen an, die deine Gruppen verstehen. Am Anfang sind
+  Englisch und die Sprache von Windows angehakt. Änderst du die Liste, ändern sich die Worte aller
+  Songs auf einmal.
+
+Ein Set kann Songs mit verständlichen Worten weglassen: siehe „Die Optionen des Sets“ unter *Ein
+Set erstellen*.
+
 ## Teile auslassen
 
 Um einen Abschnitt eines Songs auszulassen, etwa eine lange Stille oder einen gesprochenen Teil,
@@ -384,17 +419,22 @@ Phasen des klassischen Bogens: **Evokativ**, **Durchbruch**, **Herz** und **Medi
 - Zieh die Linie zwischen zwei Phasen, um sie zu verschieben.
 - Doppelklicke den Namen einer Phase, um sie umzubenennen.
 - Ein Rechtsklick bietet **Phase hier hinzufügen**, **„…“ umbenennen…** und **Phase entfernen**.
+  Steht **Verständliche Worte** des Sets auf **Je Phase**, bietet das Menü auch **Verständliche
+  Worte weglassen**.
 
 Die Linien zwischen den Phasen hängen an der Kurve: Wenn du einen Punkt der Kurve ziehst, wandern
 die Phasen daneben mit, sodass eine Phase bei ihrem Teil der Kurve bleibt.
 
-Phasen sind Beschriftungen für dich: Sie ändern nicht, welche Songs gewählt werden. Sie werden
-beim Abspielen gezeigt und im Live-Fenster.
+Phasen sind Beschriftungen für dich: Sie ändern nicht, welche Songs gewählt werden, es sei denn,
+eine Phase lässt verständliche Worte weg (siehe „Die Optionen des Sets“). Eine solche Phase hat
+hinter ihrem Namen ein kleines durchgestrichenes „Aa“. Phasen werden beim Abspielen gezeigt und im
+Live-Fenster.
 
 ## Vorlagen
 
 Die Form eines Sets lässt sich als **Vorlage** behalten: Kurve, Phasen, Länge, Tempolinie,
-höchste BPM, Art der Übergänge und Länge der Überblendungen, aber nicht seine Songs.
+höchste BPM, Art der Übergänge, Länge der Überblendungen und verständliche Worte, aber nicht seine
+Songs.
 
 - **Kurve ▾ › Als Vorlage sichern…** sichert die Form des Sets unter einem Namen. Derselbe Name
   ersetzt eine Vorlage.
@@ -421,6 +461,17 @@ höchste BPM, Art der Übergänge und Länge der Überblendungen, aber nicht sei
   Summe. **Minuten der Phasen…** fragt sie in einer Zeile ab, etwa „15, 20, 15, 10“. Die Kurve
   behält in jeder Phase ihre Form, gestaucht oder gedehnt, und das Set kann bis zu 5 Minuten
   kürzer oder länger werden. Solange das an ist, zeigen die Längenfelder nur das Ergebnis.
+- **Verständliche Worte**: ob Generieren Songs verwendet, deren Worte man versteht (siehe „Gesang
+  und Worte“ unter *Die Songs richtig einordnen*):
+  - **Einbeziehen**: Es verwendet sie wie alle anderen.
+  - **Weglassen**: Es lässt sie im ganzen Set weg, auch in Übergängen.
+  - **Je Phase**: Es lässt sie in den Phasen weg, die du wählst: Klick eine Phase in der Leiste
+    über der Kurve mit rechts an und wähl **Verständliche Worte weglassen**.
+
+  Fixierte Songs bleiben, wo sie sind. Songs, deren Worte noch unbekannt sind, können verwendet
+  werden: Nach deiner Wahl sagt die Statuszeile, wie viele solche Songs der Pool hat. Verlängern,
+  Kürzen und Set anpassen halten sich während des Abspielens an dieselbe Regel. Kann der Pool das
+  Set ohne sie nicht füllen, sagt Generieren, wo sie weggelassen wurden.
 
 ## Höchste BPM
 
@@ -952,6 +1003,7 @@ App hast.
 | Kurve | Die geplante Intensität des Sets vom Anfang bis zum Ende. |
 | Phase | Ein benannter Abschnitt eines Sets, etwa „Herz“. |
 | Richtung | Ob ein Song auf den Weg hinauf zu einem Höhepunkt gehört, hinunter, auf eine flache Strecke oder überallhin. |
+| Verständliche Worte | Worte, die die Zuhörenden verstehen, weil sie in einer Sprache sind, die sie kennen. |
 | BPM | Schläge pro Minute: das Tempo eines Songs. |
 | Tempolinie | Eine freiwillige Vorgabe für die Tempi der Songs über das Set hinweg. |
 | Übergang | Die Überblendung von einem Song in den nächsten. |
