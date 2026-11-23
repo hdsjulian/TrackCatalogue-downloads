@@ -3,6 +3,16 @@
   <channel>
     <title>Track Catalogue for Mac</title>
     <item>
+      <title>Track Catalogue 0.7</title>
+      <pubDate>Mon, 23 Nov 2026 00:55:07 GMT</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>0.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><b>Vocals and words.</b> Songs have two new values, Vocals (None, Some, Throughout) and Words (Understood, Not Understood, None), as columns in the catalogue, in a song's details and in its right-click menu. Words comes by itself: the app looks up the language of a song's lyrics on MusicBrainz, sending only its artist and title, and compares it with the languages people understand, which you tick in Settings. What you set yourself always wins. Please check what it found for your songs: hover over Words to see the language.</li><li><b>Sets without understood words.</b> In a set's options, Understood Words can be Include, Exclude (no such song anywhere in the set, transitions included) or Per Phase: right-click a phase and choose Leave Out Understood Words, for example for Heart. Prolong and Change the Set keep to it while the set plays.</li><li><b>Settings</b> has "Look up song languages online", on unless you switch it off, and the list of understood languages: English and your computer's language to start with.</li></ul>]]></description>
+      <description xml:lang="de"><![CDATA[<ul><li><b>Gesang und Worte.</b> Songs haben zwei neue Werte, Gesang (kein, etwas, durchgehend) und Worte (verständlich, nicht verständlich, keine), als Spalten im Katalog, in den Details eines Songs und in seinem Rechtsklick-Menü. Worte ergibt sich von selbst: Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, wobei nur Künstler und Titel gesendet werden, und vergleicht sie mit den Sprachen, die man versteht. Die hakst du in den Einstellungen an. Was du selbst festlegst, gilt immer. Schau bitte nach, was sie für deine Songs gefunden hat: Zeig mit der Maus auf Worte, dann siehst du die Sprache.</li><li><b>Sets ohne verständliche Worte.</b> In den Optionen eines Sets kann „Verständliche Worte“ auf Einbeziehen, Weglassen (kein solcher Song irgendwo im Set, auch nicht in Übergängen) oder Je Phase stehen: Klick eine Phase mit rechts an und wähl „Verständliche Worte weglassen“, etwa für Herz. Verlängern und „Set anpassen“ halten sich daran, während das Set spielt.</li><li><b>Die Einstellungen</b> haben „Sprache der Songs online nachschlagen“, an, solange du es nicht ausschaltest, und die Liste der verstandenen Sprachen: am Anfang Englisch und die Sprache deines Computers.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.7/TrackCatalogue-0.7.dmg" length="9158245" type="application/octet-stream" sparkle:edSignature="YfYjujloKXGa7hqp21VXF2o9zMnRNlFcPEY5ScMhtTnlNU5rekldZE7+ysHiHtpsReVryaKanFbCeL2yCEbWBg=="/>
+    </item>
+    <item>
       <title>Track Catalogue 0.6</title>
       <pubDate>Sun, 22 Nov 2026 21:28:39 GMT</pubDate>
       <sparkle:version>6</sparkle:version>

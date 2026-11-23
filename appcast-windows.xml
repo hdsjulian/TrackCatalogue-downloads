@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.7</title>
+      <pubDate>Mon, 23 Nov 2026 00:55:07 GMT</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>0.7</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Vocals and words.</b> Songs have two new values, Vocals (None, Some, Throughout) and Words (Understood, Not Understood, None), as columns in the catalogue, in a song's details and in its right-click menu. Words comes by itself: the app looks up the language of a song's lyrics on MusicBrainz, sending only its artist and title, and compares it with the languages people understand, which you tick in Settings. What you set yourself always wins. Please check what it found for your songs: hover over Words to see the language.</li><li><b>Sets without understood words.</b> In a set's options, Understood Words can be Include, Exclude (no such song anywhere in the set, transitions included) or Per Phase: right-click a phase and choose Leave Out Understood Words, for example for Heart. Prolong and Change the Set keep to it while the set plays.</li><li><b>Settings</b> has "Look up song languages online", on unless you switch it off, and the list of understood languages: English and your computer's language to start with.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.7/TrackCatalogue-Setup-0.7.exe" length="24042985" type="application/octet-stream" sparkle:edSignature="oCshQ3QGg9A6OsWKI4dmo+UrwuRZpedJng+OKou/blawBXAuTF5LurEB+J/iCH84nsG/ObK0r5tK3udqxlKZBA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.6</title>
       <pubDate>Sun, 22 Nov 2026 21:28:39 GMT</pubDate>
       <sparkle:version>6</sparkle:version>

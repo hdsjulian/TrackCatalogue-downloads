@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.7</title>
+      <pubDate>Mon, 23 Nov 2026 00:55:07 GMT</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>0.7</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Gesang und Worte.</b> Songs haben zwei neue Werte, Gesang (kein, etwas, durchgehend) und Worte (verständlich, nicht verständlich, keine), als Spalten im Katalog, in den Details eines Songs und in seinem Rechtsklick-Menü. Worte ergibt sich von selbst: Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, wobei nur Künstler und Titel gesendet werden, und vergleicht sie mit den Sprachen, die man versteht. Die hakst du in den Einstellungen an. Was du selbst festlegst, gilt immer. Schau bitte nach, was sie für deine Songs gefunden hat: Zeig mit der Maus auf Worte, dann siehst du die Sprache.</li><li><b>Sets ohne verständliche Worte.</b> In den Optionen eines Sets kann „Verständliche Worte“ auf Einbeziehen, Weglassen (kein solcher Song irgendwo im Set, auch nicht in Übergängen) oder Je Phase stehen: Klick eine Phase mit rechts an und wähl „Verständliche Worte weglassen“, etwa für Herz. Verlängern und „Set anpassen“ halten sich daran, während das Set spielt.</li><li><b>Die Einstellungen</b> haben „Sprache der Songs online nachschlagen“, an, solange du es nicht ausschaltest, und die Liste der verstandenen Sprachen: am Anfang Englisch und die Sprache deines Computers.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.7/TrackCatalogue-Setup-0.7.exe" length="24042985" type="application/octet-stream" sparkle:edSignature="oCshQ3QGg9A6OsWKI4dmo+UrwuRZpedJng+OKou/blawBXAuTF5LurEB+J/iCH84nsG/ObK0r5tK3udqxlKZBA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.6</title>
       <pubDate>Sun, 22 Nov 2026 21:28:39 GMT</pubDate>
       <sparkle:version>6</sparkle:version>
