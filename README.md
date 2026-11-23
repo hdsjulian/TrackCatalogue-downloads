@@ -7,7 +7,7 @@ or export.
 **Download:** [the latest version](../../releases/latest), for Mac and for Windows.
 
 **Updates:** from version 0.6 on, Track Catalogue updates itself: it checks for new versions and
-asks before it installs one. If you have 0.5 or older, download and install 0.6 by hand once.
+asks before it installs one. If you have 0.5 or older, download and install the latest version by hand once.
 
 **Manual for Windows:** [read it here](manual/user-manual.md), or as a
 [PDF](manual/Track%20Catalogue%20for%20Windows%20-%20User%20Manual.pdf) to print.
@@ -49,8 +49,8 @@ du abspielen oder exportieren kannst.
 **Download:** [die neueste Version](../../releases/latest), für Mac und Windows.
 
 **Updates:** Ab Version 0.6 aktualisiert sich Track Catalogue selbst: Es sucht nach neuen Versionen
-und fragt, bevor es eine installiert. Wenn du 0.5 oder älter hast, lade 0.6 einmal selbst herunter
-und installier es.
+und fragt, bevor es eine installiert. Wenn du 0.5 oder älter hast, lade die neueste Version einmal
+selbst herunter und installier sie.
 
 **Handbuch für Windows:** [hier lesen](manual/benutzerhandbuch.md), oder als
 [PDF](manual/Track%20Catalogue%20f%C3%BCr%20Windows%20-%20Benutzerhandbuch.pdf) zum Ausdrucken.
