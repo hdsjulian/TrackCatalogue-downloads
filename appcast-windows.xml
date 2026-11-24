@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.8.1</title>
+      <pubDate>Tue, 24 Nov 2026 14:23:58 GMT</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>0.8.1</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Big collections analyse at an even pace.</b> The catalogues now live in the app's song database instead of one big file that was written again after every change. With thousands of songs, analysis no longer slows down as the catalogue grows. On the first start, your catalogues move in by themselves; the old files are kept as backups.</li><li><b>Windows keeps its settings.</b> Windows forgot every setting at each start: window sizes, Settings, the chart layers. It keeps them now, and What's New shows only once after an update.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.8.1/TrackCatalogue-Setup-0.8.1.exe" length="44900869" type="application/octet-stream" sparkle:edSignature="IabY0jgFOh2KzMS+4ZrwBWgdtPVF3x11rIvDDpYkHSs0Bnkw21fnuksMMBJWznlNWq55+WyNcEot0ZFZuGyABw==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8</title>
       <pubDate>Mon, 23 Nov 2026 20:56:13 GMT</pubDate>
       <sparkle:version>8</sparkle:version>

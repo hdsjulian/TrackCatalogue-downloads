@@ -3,6 +3,16 @@
   <channel>
     <title>Track Catalogue for Mac</title>
     <item>
+      <title>Track Catalogue 0.8.1</title>
+      <pubDate>Tue, 24 Nov 2026 14:23:58 GMT</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>0.8.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><b>Big collections analyse at an even pace.</b> The catalogues now live in the app's song database instead of one big file that was written again after every change. With thousands of songs, analysis no longer slows down as the catalogue grows. On the first start, your catalogues move in by themselves; the old files are kept as backups.</li><li><b>Windows keeps its settings.</b> Windows forgot every setting at each start: window sizes, Settings, the chart layers. It keeps them now, and What's New shows only once after an update.</li></ul>]]></description>
+      <description xml:lang="de"><![CDATA[<ul><li><b>Große Sammlungen werden gleichmäßig analysiert.</b> Die Kataloge liegen jetzt in der Song-Datenbank der App statt in einer großen Datei, die nach jeder Änderung neu geschrieben wurde. Bei Tausenden Songs wird die Analyse nicht mehr langsamer, je größer der Katalog wird. Beim ersten Start ziehen deine Kataloge von selbst um; die alten Dateien bleiben als Sicherung erhalten.</li><li><b>Windows behält seine Einstellungen.</b> Windows hat bei jedem Start alle Einstellungen vergessen: Fenstergrößen, Einstellungen, die Ebenen der Diagramme. Jetzt bleiben sie, und „Neu in Track Catalogue“ erscheint nach einem Update nur einmal.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.8.1/TrackCatalogue-0.8.1.dmg" length="11921415" type="application/octet-stream" sparkle:edSignature="LC/BDIvGMFMrXO9KZOaQfz6dmU5/iMhPAPTmwX/O19ZUkD4XPJBg02A/ts5ErS21QloajFMpDeu3/EHi7cH6BQ=="/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8</title>
       <pubDate>Mon, 23 Nov 2026 20:56:13 GMT</pubDate>
       <sparkle:version>8</sparkle:version>
