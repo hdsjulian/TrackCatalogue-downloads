@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.8.2</title>
+      <pubDate>Tue, 24 Nov 2026 17:12:20 GMT</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>0.8.2</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Nach Updates suchen in „Über Track Catalogue“.</b> Das Fenster „Über Track Catalogue“ hat jetzt einen Knopf „Nach Updates suchen“, damit du auch von dort nach einer neuen Version suchen kannst.</li><li><b>Worte nennt die Sprache.</b> Die Spalte „Worte“ im Katalog sagt, welche Sprache gefunden wurde, etwa „Verständlich (Englisch)“ oder „Nicht verständlich (Irisch)“, damit du sie auf einen Blick prüfen kannst.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.8.2/TrackCatalogue-Setup-0.8.2.exe" length="44916242" type="application/octet-stream" sparkle:edSignature="if1kg/Pqjb0lNML2kUKEhsLH+7myOt7HwzCjpc8bGvK2aad8O2ysN7y2ADxDSTLAXlK0ezmhnsPTqprXlll9DA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8.1</title>
       <pubDate>Tue, 24 Nov 2026 14:23:58 GMT</pubDate>
       <sparkle:version>9</sparkle:version>

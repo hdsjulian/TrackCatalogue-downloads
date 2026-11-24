@@ -3,6 +3,16 @@
   <channel>
     <title>Track Catalogue for Mac</title>
     <item>
+      <title>Track Catalogue 0.8.2</title>
+      <pubDate>Tue, 24 Nov 2026 17:12:20 GMT</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>0.8.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><b>Check for Updates in About.</b> About Track Catalogue now has a Check for Updates button, so you can look for a new version from there too.</li><li><b>Words names the language.</b> The catalogue's Words column says which language it found, such as "Understood (English)" or "Not Understood (Irish)", so you can check it at a glance.</li></ul>]]></description>
+      <description xml:lang="de"><![CDATA[<ul><li><b>Nach Updates suchen in „Über Track Catalogue“.</b> Das Fenster „Über Track Catalogue“ hat jetzt einen Knopf „Nach Updates suchen“, damit du auch von dort nach einer neuen Version suchen kannst.</li><li><b>Worte nennt die Sprache.</b> Die Spalte „Worte“ im Katalog sagt, welche Sprache gefunden wurde, etwa „Verständlich (Englisch)“ oder „Nicht verständlich (Irisch)“, damit du sie auf einen Blick prüfen kannst.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.8.2/TrackCatalogue-0.8.2.dmg" length="11961755" type="application/octet-stream" sparkle:edSignature="7UljZIL1v5FRB0/w7s+vJcxmE1OLHylqo/aWsxM0gqbbIHHspEKE05qJPSw+7W+JHNw2l1NhNohSE4Cwtjp6BQ=="/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8.1</title>
       <pubDate>Tue, 24 Nov 2026 14:23:58 GMT</pubDate>
       <sparkle:version>9</sparkle:version>
