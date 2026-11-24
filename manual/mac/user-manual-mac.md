@@ -236,12 +236,15 @@ song's intensity. In a set, the song's details say "Level +1.5 dB, set in the ca
 A song whose words people understand pulls them into their heads. A chant in Sanskrit, humming or a
 choir's "aah" doesn't. So each song has two values:
 
-- **Vocals**: whether it has singing or speech: **None**, **Some** or **Throughout**. You set it
-  yourself.
+- **Vocals**: whether it has singing or speech: **None**, **Some** or **Throughout**. The analysis
+  listens for voices, singing, speech, chant or a choir, second by second, and gives the share of
+  seconds with them: a few makes **Some**, most of the song **Throughout**. Songs analysed before
+  version 0.8 are listened to once, in the background.
 - **Words**: whether people understand its words: **Understood**, **Not Understood** or **None**.
 
-You never pick a language. The app looks up the language of a song's lyrics on MusicBrainz, a
-public music database, after the song is analysed. Only its artist and title are sent. If the
+You never pick a language. For songs with vocals, the app looks up the language of the lyrics on
+MusicBrainz, a public music database, after the song is analysed. Only its artist and title are
+sent. Songs without vocals aren't looked up: their Words are **None**. If the
 language is one people understand, Words says **Understood**; any other says **Not Understood**;
 a song without lyrics says **None**. Until the language is known, Words says **Unknown**, in light
 grey. Automatic values are grey, yours are in normal text, and **yours always win**. A song you've
@@ -249,13 +252,23 @@ set to Vocals **None** has no words.
 
 Set both in the Inspector, or right-click several songs and choose **Vocals** or **Words**.
 **Words › Look Up Language Again**, or **Look Up Again** in the Inspector, asks MusicBrainz again.
-The Inspector's **Language** line says what was found, such as "German, from MusicBrainz". The
+The Inspector's **Language** line says what was found, such as "German, from MusicBrainz".
+
+**Listening for the language.** MusicBrainz doesn't know every song. For songs with vocals it
+doesn't find, the app offers once to listen on this computer: it downloads a language model of
+about 140 MB once (Whisper, from OpenAI, free to use), and then hears the language in each song's
+most vocal 30 seconds. Nothing is sent; the songs stay on your computer. The **Language** line then
+says, for example, "German, from listening". If Whisper can't tell for sure, it says **Unclear**,
+and Words counts as **Not Understood**: if the app can't tell, listeners mostly can't either.
+**Words › Detect Language by Listening**, or **Listen** in the Inspector, listens to selected songs
+again, and asks to download the model if it isn't there. The
 Vocals and Words columns can be shown or hidden like any other (right-click the header).
 
-**TrackCatalogue › Settings…** has two settings for this:
+**TrackCatalogue › Settings…** has three settings for this:
 
 - **Look up song languages online**: on unless you switch it off. Off, nothing is sent, and Words
   stays Unknown unless you set it.
+- **Language model**: whether the model for listening is downloaded; **Remove** deletes it.
 - **Understood languages**: tick the languages your groups understand. English and the language
   of your Mac are ticked at first. Changing the list changes every song's Words at once.
 
@@ -352,6 +365,10 @@ Click it for:
 - **Loops**: the songs of the **Pre Loop** and the **Post Loop**, added from the pool (see Live
   play).
 - **Other sets**: **Prefer songs not used in other sets**, and **In production**.
+- **Keys**: **Key Fit**, how much Generate cares that neighbouring songs' keys fit where they
+  overlap: the same key, its relative, or one step on the circle of fifths. **Off** ignores keys;
+  **Some** is the default; **Strong** weighs a clash five times as much; **Must Fit** never lets
+  clashing keys follow each other. Songs without a clear key fit anything.
 - **Understood Words**: whether Generate uses songs whose words people understand (see "Vocals
   and words" under *Getting the songs right*):
   - **Include**: it uses them like any other.
@@ -502,11 +519,44 @@ already in the set adds its next part.
 **← and →** step through the songs and transitions. **Zoom** with ⌘− and ⌘+, **Fit** (⌘0), pinching
 on the trackpad, or ⌘ and the scroll wheel; scroll sideways to move along the set.
 
+## Chart layers
+
+The small buttons at the top left of the timeline choose what the songs show. Each switches on or
+off by itself, in any mix:
+
+- **Intensity:** the song's intensity, as before. On by itself at first.
+- **Waveform:** the song's loudness peaks, ten a second. Over Intensity it's an outline; alone, it's
+  filled. Songs analysed before version 0.8 show their coarser loudness until their waveform is
+  measured, once, in the background.
+- **Vocals:** the stretches with singing or speech, lightly shaded.
+- **Volume:** the set's volume line (below).
+
+⌥1, ⌥2, ⌥3 and ⌥4 switch them, also in the **View** menu; ⌥0 switches all on, or back to Intensity
+alone. The choice counts for every chart (the timeline, the details, the transition close-up and a
+song's chart in the Inspector) and is kept.
+
+## The set's volume line
+
+**Volume** (⌥4) shows a line across the songs: the set's volume, at 0 dB until you change it. Click
+it to add a point, drag a point up or down (from −24 dB to +12 dB), and double-click it to take it
+away. A point dragged near 0 dB snaps to it. The small diamond between two points bends the line:
+faster first, or slower first. The line stays at its time in the set whatever songs play there, and
+it's applied before the limiter, so louder never clips. Once it has points, the line is always shown.
+Prolong, Shorten and Change the Set move it with the set. **Reset Volume** in the set's options
+(Fades) takes all the points away.
+
 ## A song in the set
 
 ![A song selected in the set](images/mac/song-in-set.png)
 
-Select a song to see in the details panel:
+The details under the timeline are one strip: the set's summary first, then every song and
+transition in order. Scroll it sideways (the trackpad, Shift and the mouse wheel, or its scroll
+bar): what fills the strip is selected, and selecting in the timeline scrolls the strip there.
+While the set plays, the strip follows what's playing, the transition while two songs overlap.
+Once you scroll yourself it stops following; **Follow**, or selecting in the timeline, brings it
+back.
+
+Select a song to see in the details:
 
 - Where it is, its intensity, its tempo, its transitions in and out, other sets that use it, and how
   much louder or quieter it was made to match the others.
@@ -569,6 +619,18 @@ transition. Bass swaps, EQ blends and filter sweeps keep their own curves.
 
 **End with a fade**, in the same place, lets the last song fade to silence, over 10 seconds to
 2 minutes, in a shape of its own.
+
+### Drawn fades
+
+For a fade no shape gives, choose **Drawn** in a transition's **Fade** menu (for a bass swap, EQ
+blend or filter sweep, **Draw** beside **Volume**). Two lines appear over the overlap, the outgoing
+song's and the incoming song's volume, full at the top. They start as the shape the transition had.
+Click a line to add a point, drag points anywhere in the overlap, and double-click one to remove it;
+the small diamond between two points bends the segment. The ends stay where the overlap starts and
+ends, and a longer or shorter overlap stretches the drawing. Over a bass swap, EQ blend or filter
+sweep the lines are the volume, on top of the band curves. **Reset to Shape** goes back. The
+drawing belongs to the transition, like its other settings: it comes back when the same song
+follows the same song again.
 
 ## Beatmatching
 

@@ -247,13 +247,16 @@ Ein Song, dessen Worte man versteht, holt einen in den Kopf. Ein Gesang auf Sans
 das „Aah“ eines Chors tun das nicht. Deshalb hat jeder Song zwei Werte:
 
 - **Vocals** (Gesang): ob er Gesang oder Sprache hat: **None**, **Some** oder **Throughout** (kein,
-  etwas, durchgehend). Das legst du selbst fest.
+  etwas, durchgehend). Die Analyse hört Sekunde für
+  Sekunde auf Stimmen, Gesang, Sprache, Chant oder einen Chor und ermittelt den Anteil der Sekunden
+  damit: ein paar ergeben **Some**, der größte Teil des Songs **Throughout**. Songs, die vor Version 0.8
+  analysiert wurden, werden einmal im Hintergrund angehört.
 - **Words** (Worte): ob man seine Worte versteht: **Understood**, **Not Understood** oder **None**
   (verständlich, nicht verständlich, keine).
 
-Eine Sprache wählst du nie. Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, einer
-öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler und Titel werden
-gesendet. Ist die Sprache eine, die man versteht, steht bei Words **Understood**; bei jeder anderen
+Eine Sprache wählst du nie. Für Songs mit Gesang schlägt die App die Sprache des Songtexts bei
+MusicBrainz nach, einer öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler
+und Titel werden gesendet. Songs ohne Gesang werden nicht nachgeschlagen: Ihre Words sind **None**. Ist die Sprache eine, die man versteht, steht bei Words **Understood**; bei jeder anderen
 **Not Understood**; bei einem Song ohne Text **None**. Solange die Sprache nicht bekannt ist, steht
 dort **Unknown**, in hellem Grau. Automatische Werte sind grau, deine in normaler Schrift, und
 **deine gelten immer**. Ein Song, bei dem du Vocals **None** festgelegt hast, hat keine Worte.
@@ -264,10 +267,20 @@ noch einmal. Die Zeile **Language** im Inspector sagt, was gefunden wurde, etwa 
 MusicBrainz“. Die Spalten Vocals und Words blendest du wie jede andere ein und aus (Rechtsklick auf
 die Kopfzeile).
 
-**TrackCatalogue › Settings…** hat dafür zwei Einstellungen:
+**Die Sprache heraushören.** MusicBrainz kennt nicht jeden Song. Für Songs mit Gesang, die es nicht
+findet, bietet die App einmal an, auf diesem Computer zuzuhören: Sie lädt einmal ein Sprachmodell
+mit etwa 140 MB herunter (Whisper von OpenAI, frei verwendbar) und hört dann die Sprache in den 30
+Sekunden jedes Songs mit dem meisten Gesang heraus. Gesendet wird nichts; die Songs bleiben auf
+deinem Computer. Die Zeile **Language** sagt dann etwa „German, from listening“. Ist sich Whisper nicht sicher,
+steht dort **Unclear**, und Words gilt als **Not Understood**: Wenn die App es nicht erkennt, verstehen
+es die Zuhörenden meist auch nicht. **Words › Detect Language by Listening** oder **Listen** im Inspector hört sich ausgewählte Songs
+noch einmal an und fragt nach dem Herunterladen, falls das Modell fehlt.
+
+**TrackCatalogue › Settings…** hat dafür drei Einstellungen:
 
 - **Look up song languages online**: an, solange du es nicht ausschaltest. Aus, wird nichts
   gesendet, und Words bleibt Unknown, solange du es nicht festlegst.
+- **Language model**: ob das Modell zum Anhören heruntergeladen ist; **Remove** löscht es.
 - **Understood languages**: Hak die Sprachen an, die deine Gruppen verstehen. Am Anfang sind
   Englisch und die Sprache deines Macs angehakt. Änderst du die Liste, ändern sich die Words aller
   Songs auf einmal.
@@ -372,6 +385,11 @@ BPM“. Ein Klick darauf zeigt:
 - **Loops**: die Songs von **Pre Loop** (Vorlauf) und **Post Loop** (Nachlauf), aus dem Pool
   hinzugefügt (siehe Live spielen).
 - **Other sets**: **Prefer songs not used in other sets** und **In production** (siehe unten).
+- **Keys**, **Key fit**: wie wichtig es Generate ist, dass die Tonarten benachbarter Songs dort
+  zusammenpassen, wo sie sich überlappen: dieselbe Tonart, ihre Paralleltonart oder ein Schritt im
+  Quintenzirkel. **Off** beachtet Tonarten nicht; **Some** ist voreingestellt; **Strong**
+  gewichtet einen Missklang fünfmal so viel; **Must Fit** lässt unpassende Tonarten nie aufeinander
+  folgen. Songs ohne klare Tonart passen zu allem.
 - **Understood Words** (verständliche Worte): ob Generate Songs verwendet, deren Worte man versteht
   (siehe „Gesang und Worte“ unter *Die Songs richtig erfassen*):
   - **Include**: Es verwendet sie wie alle anderen.
@@ -530,11 +548,45 @@ die Zeitleiste, wenn er schon im Set ist, kommt sein nächster Teil dazu.
 **← und →** gehen durch die Songs und Übergänge. **Zoomen** mit ⌘− und ⌘+, **Fit** (⌘0), mit zwei
 Fingern auf dem Trackpad oder mit ⌘ und dem Mausrad; seitlich scrollen bewegt dich durchs Set.
 
+## Ebenen der Diagramme
+
+Die kleinen Knöpfe oben links in der Zeitleiste wählen, was die Songs zeigen. Jeder geht für sich
+an und aus, in jeder Mischung:
+
+- **Intensity** (Intensität): die Intensität des Songs, wie bisher. Am Anfang allein an.
+- **Waveform** (Wellenform): die Lautstärkespitzen des Songs, zehn pro Sekunde. Über Intensity ist
+  sie ein Umriss, allein ist sie gefüllt. Songs, die vor Version 0.8 analysiert wurden, zeigen ihre
+  gröbere Lautheit, bis ihre Wellenform einmal im Hintergrund gemessen ist.
+- **Vocals** (Gesang): die Stellen mit Gesang oder Sprache, leicht schattiert.
+- **Volume** (Lautstärke): die Lautstärkelinie des Sets (unten).
+
+⌥1, ⌥2, ⌥3 und ⌥4 schalten sie, auch im Menü **View**; ⌥0 schaltet alle an oder zurück auf
+Intensity allein. Die Wahl gilt für jedes Diagramm (die Zeitleiste, die Details, die Nahansicht
+eines Übergangs und das Diagramm eines Songs im Inspector) und bleibt erhalten.
+
+## Die Lautstärkelinie des Sets
+
+**Volume** (⌥4) zeigt eine Linie über den Songs: die Lautstärke des Sets, bei 0 dB, bis du sie
+änderst. Klick auf die Linie, um einen Punkt hinzuzufügen, zieh einen Punkt nach oben oder unten
+(von −24 dB bis +12 dB), und doppelklick ihn, um ihn zu entfernen. Ein Punkt in der Nähe von 0 dB
+rastet dort ein. Die kleine Raute zwischen zwei Punkten biegt die Linie: erst schneller oder erst
+langsamer. Die Linie bleibt an ihrer Zeit im Set, egal welche Songs dort spielen, und wirkt vor dem
+Limiter, sodass lauter nie übersteuert. Sobald sie Punkte hat, wird sie immer gezeigt. Prolong,
+Shorten und Change the Set verschieben sie mit dem Set. **Reset Volume** in den Optionen des Sets
+(Fades) entfernt alle Punkte.
+
 ## Ein Song im Set
 
 ![Ein im Set ausgewählter Song](images/mac/song-in-set.png)
 
-Wähl einen Song aus, und die Leiste unten zeigt:
+Die Details unter der Zeitleiste sind ein durchgehender Streifen: zuerst die Übersicht des Sets,
+dann jeder Song und jeder Übergang der Reihe nach. Scroll ihn seitlich (Trackpad, Shift und Mausrad
+oder seine Scrollleiste): Was den Streifen füllt, ist ausgewählt, und eine Auswahl in der Zeitleiste
+scrollt den Streifen dorthin. Während das Set spielt, folgt der Streifen dem, was gerade läuft, beim
+Überlappen zweier Songs dem Übergang. Scrollst du selbst, hört er damit auf; **Follow** oder eine
+Auswahl in der Zeitleiste bringt es zurück.
+
+Wähl einen Song aus, und die Details zeigen:
 
 - Wo er ist, seine Intensität, sein Tempo, seine Übergänge davor und danach, andere Sets, die ihn
   verwenden, und wie viel lauter oder leiser er gemacht wurde, damit er zu den anderen passt.
@@ -602,6 +654,19 @@ legt eine Form für das ganze Set fest; **Fade** in den Details eines Übergangs
 
 **End with a fade**, an derselben Stelle, lässt den letzten Song in die Stille ausblenden, über
 10 Sekunden bis 2 Minuten, in einer eigenen Form.
+
+### Gezeichnete Blenden
+
+Für eine Blende, die keine Form hergibt, wähl **Drawn** im Menü **Fade** eines Übergangs (bei
+Bass-Wechsel, EQ-Überblendung oder Filter-Sweep **Draw** neben **Volume**). Über der Überlappung
+erscheinen zwei Linien, die Lautstärke des ausgehenden und des kommenden Songs, oben voll. Sie
+beginnen mit der Form, die der Übergang hatte. Klick auf eine Linie, um einen Punkt hinzuzufügen,
+zieh Punkte irgendwohin in der Überlappung und doppelklick einen, um ihn zu entfernen; die kleine
+Raute zwischen zwei Punkten biegt das Stück. Die Enden bleiben, wo die Überlappung anfängt und
+aufhört, und eine längere oder kürzere Überlappung dehnt die Zeichnung mit. Bei Bass-Wechsel,
+EQ-Überblendung oder Filter-Sweep sind die Linien die Lautstärke, über den Kurven der Bänder.
+**Reset to Shape** geht zurück. Die Zeichnung gehört zum Übergang, wie seine anderen Einstellungen:
+Sie kommt wieder, wenn derselbe Song wieder auf denselben folgt.
 
 ## Beats angleichen
 

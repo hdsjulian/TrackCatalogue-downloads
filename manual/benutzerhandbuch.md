@@ -259,13 +259,15 @@ eingestellt“.
 Ein Song, dessen Worte man versteht, holt einen in den Kopf. Ein Gesang auf Sanskrit, Summen oder
 das „Aah“ eines Chors tun das nicht. Deshalb hat jeder Song zwei Werte:
 
-- **Gesang**: ob er Gesang oder Sprache hat: **Kein**, **Etwas** oder **Durchgehend**. Das legst
-  du selbst fest.
+- **Gesang**: ob er Gesang oder Sprache hat: **Kein**, **Etwas** oder **Durchgehend**. Die Analyse hört Sekunde für
+  Sekunde auf Stimmen, Gesang, Sprache, Chant oder einen Chor und ermittelt den Anteil der Sekunden
+  damit: ein paar ergeben **Etwas**, der größte Teil des Songs **Durchgehend**. Songs, die vor Version 0.8
+  analysiert wurden, werden einmal im Hintergrund angehört.
 - **Worte**: ob man seine Worte versteht: **Verständlich**, **Nicht verständlich** oder **Keine**.
 
-Eine Sprache wählst du nie. Die App schlägt die Sprache des Songtexts bei MusicBrainz nach, einer
-öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler und Titel werden
-gesendet. Ist die Sprache eine, die man versteht, steht bei Worte **Verständlich**; bei jeder
+Eine Sprache wählst du nie. Für Songs mit Gesang schlägt die App die Sprache des Songtexts bei
+MusicBrainz nach, einer öffentlichen Musikdatenbank, nachdem der Song analysiert ist. Nur Künstler
+und Titel werden gesendet. Songs ohne Gesang werden nicht nachgeschlagen: Ihre Worte sind **Keine**. Ist die Sprache eine, die man versteht, steht bei Worte **Verständlich**; bei jeder
 anderen **Nicht verständlich**; bei einem Song ohne Text **Keine**. Solange die Sprache nicht
 bekannt ist, steht dort **Unbekannt**, in hellem Grau. Automatische Werte sind grau, deine in
 normaler Schrift, und **deine gelten immer**. Ein Song, bei dem du Gesang **Kein** festgelegt hast,
@@ -276,10 +278,20 @@ Leg beide in den Details des Songs fest, oder klick mehrere Songs mit rechts an 
 Details fragt MusicBrainz noch einmal. Die Zeile **Sprache** in den Details sagt, was gefunden
 wurde, etwa „Deutsch, von MusicBrainz“.
 
-**Datei › Einstellungen** hat dafür zwei Einstellungen:
+**Die Sprache heraushören.** MusicBrainz kennt nicht jeden Song. Für Songs mit Gesang, die es nicht
+findet, bietet die App einmal an, auf diesem Computer zuzuhören: Sie lädt einmal ein Sprachmodell
+mit etwa 140 MB herunter (Whisper von OpenAI, frei verwendbar) und hört dann die Sprache in den 30
+Sekunden jedes Songs mit dem meisten Gesang heraus. Gesendet wird nichts; die Songs bleiben auf
+deinem Computer. Die Zeile **Sprache** sagt dann etwa „Deutsch, durch Anhören“. Ist sich Whisper nicht sicher,
+steht dort **Unklar**, und Worte gilt als **Nicht verständlich**: Wenn die App es nicht erkennt, verstehen
+es die Zuhörenden meist auch nicht. **Worte › Sprache durch Anhören erkennen** oder **Anhören** in den Details hört sich ausgewählte Songs
+noch einmal an und fragt nach dem Herunterladen, falls das Modell fehlt.
+
+**Datei › Einstellungen** hat dafür drei Einstellungen:
 
 - **Sprache der Songs online nachschlagen**: an, solange du es nicht ausschaltest. Aus, wird nichts
   gesendet, und Worte bleibt Unbekannt, solange du es nicht festlegst.
+- **Sprachmodell**: ob das Modell zum Anhören heruntergeladen ist; **Entfernen** löscht es.
 - **Verstandene Sprachen**: Hak die Sprachen an, die deine Gruppen verstehen. Am Anfang sind
   Englisch und die Sprache von Windows angehakt. Änderst du die Liste, ändern sich die Worte aller
   Songs auf einmal.
@@ -461,6 +473,11 @@ Songs.
   Summe. **Minuten der Phasen…** fragt sie in einer Zeile ab, etwa „15, 20, 15, 10“. Die Kurve
   behält in jeder Phase ihre Form, gestaucht oder gedehnt, und das Set kann bis zu 5 Minuten
   kürzer oder länger werden. Solange das an ist, zeigen die Längenfelder nur das Ergebnis.
+- **Tonarten**: wie wichtig es Generieren ist, dass die Tonarten benachbarter Songs dort
+  zusammenpassen, wo sie sich überlappen: dieselbe Tonart, ihre Paralleltonart oder ein Schritt im
+  Quintenzirkel. **Aus** beachtet Tonarten nicht; **Etwas** ist voreingestellt; **Stark**
+  gewichtet einen Missklang fünfmal so viel; **Muss passen** lässt unpassende Tonarten nie aufeinander
+  folgen. Songs ohne klare Tonart passen zu allem.
 - **Verständliche Worte**: ob Generieren Songs verwendet, deren Worte man versteht (siehe „Gesang
   und Worte“ unter *Die Songs richtig einordnen*):
   - **Einbeziehen**: Es verwendet sie wie alle anderen.
@@ -580,9 +597,43 @@ abzuspielen.
 **Zoomen** mit **−**, **+** und **Einpassen**, oder mit Strg und dem Mausrad. Durch das Set
 scrollst du mit dem Mausrad oder der Bildlaufleiste.
 
+## Ebenen der Diagramme
+
+Die kleinen Knöpfe links direkt über den Songs wählen, was die Songs zeigen. Jeder geht für sich
+an und aus, in jeder Mischung:
+
+- **Intensität:** die Intensität des Songs, wie bisher. Am Anfang allein an.
+- **Wellenform:** die Lautstärkespitzen des Songs, zehn pro Sekunde. Über der Intensität ist sie
+  ein Umriss, allein ist sie gefüllt. Songs, die vor Version 0.8 analysiert wurden, zeigen ihre
+  gröbere Lautheit, bis ihre Wellenform einmal im Hintergrund gemessen ist.
+- **Gesang:** die Stellen mit Gesang oder Sprache, leicht schattiert.
+- **Lautstärke:** die Lautstärkelinie des Sets (unten).
+
+**Alt+1** bis **Alt+4** schalten sie, auch im Menü **Ansicht** des Katalogs; **Alt+0** schaltet
+die ersten drei an oder zurück auf die Intensität allein. Die Wahl gilt für jedes Diagramm (die
+Zeitleiste, den Teil eines Songs im Set, die Nahansicht eines Übergangs und das Diagramm eines
+Songs im Katalog) und bleibt erhalten.
+
+## Die Lautstärkelinie des Sets
+
+**Lautstärke** (Alt+4) zeigt eine Linie über den Songs: die Lautstärke des Sets, bei 0 dB, bis du
+sie änderst. Klick auf die Linie, um einen Punkt hinzuzufügen, zieh einen Punkt nach oben oder
+unten (von −24 dB bis +12 dB), und doppelklick ihn, um ihn zu entfernen. Ein Punkt in der Nähe von
+0 dB rastet dort ein. Die kleine Raute zwischen zwei Punkten biegt die Linie: erst schneller oder
+erst langsamer. Die Linie bleibt an ihrer Zeit im Set, egal welche Songs dort spielen, und wirkt
+vor dem Limiter, sodass lauter nie übersteuert. Sobald sie Punkte hat, wird sie immer gezeigt.
+Verlängern, Kürzen und Set anpassen verschieben sie mit dem Set. **Optionen › Lautstärke
+zurücksetzen** entfernt alle Punkte.
+
 ## Ein Song im Set
 
 ![Ein im Set ausgewählter Song](images/de/song-in-set.png)
+
+Die Details unter der Zeitleiste gehen das Set Stück für Stück durch: Die Leiste darunter, Shift
+und das Mausrad oder seitliches Scrollen gehen von Song zu Übergang zu Song und wählen aus, was
+sie zeigen. Während das Set spielt, folgen die Details dem, was gerade läuft, beim Überlappen
+zweier Songs dem Übergang. Gehst du selbst weiter, hören sie damit auf; **Folgen** oder eine
+Auswahl in der Zeitleiste bringt es zurück.
 
 Wähl einen Song aus, in der Zeitleiste oder in der Reihenfolge, und du siehst:
 
@@ -664,6 +715,20 @@ eigenen Kurven.
 **Optionen › Mit einer Ausblendung enden** lässt den letzten Song in die Stille ausblenden, über
 10 Sekunden bis 2 Minuten (**Länge der Ausblendung**), in einer eigenen Form (**Form der
 Ausblendung**).
+
+### Gezeichnete Blenden
+
+Für eine Blende, die keine Form hergibt, wähl **Gezeichnet** am Ende der Liste **Blende** eines
+Übergangs. Bei Bass-Swap, EQ-Blend oder Filter-Sweep drückst du stattdessen **Lautstärke zeichnen**
+oben rechts in seiner Nahansicht. Über der Überlappung erscheinen zwei Linien, die Lautstärke des
+ausgehenden und des kommenden Songs, oben voll. Sie beginnen mit der Form, die der Übergang hatte.
+Klick auf eine Linie, um einen Punkt hinzuzufügen, zieh Punkte irgendwohin in der Überlappung und
+doppelklick einen, um ihn zu entfernen; die kleine Raute zwischen zwei Punkten biegt das Stück. Die
+Enden bleiben, wo die Überlappung anfängt und aufhört, und eine längere oder kürzere Überlappung
+dehnt die Zeichnung mit. Bei Bass-Swap, EQ-Blend oder Filter-Sweep sind die Linien die Lautstärke,
+über den Kurven der Bänder. Eine Form wählen oder **Auf Form zurücksetzen** in der Nahansicht geht
+zurück. Die Zeichnung gehört zum Übergang, wie seine anderen Einstellungen: Sie kommt wieder, wenn
+derselbe Song wieder auf denselben folgt.
 
 ## Im Beat
 
@@ -915,6 +980,8 @@ Strg+Z macht jede Änderung rückgängig, Strg+Y (oder Strg+Umschalt+Z) wiederho
 | Strg+G | Generieren |
 | Strg+Umschalt+G | Neu generieren |
 | Strg+S | Speichern |
+| Alt+1 bis Alt+4 | Die Ebenen Intensität, Wellenform, Gesang und Lautstärke schalten |
+| Alt+0 | Alle Ebenen, oder nur Intensität |
 | Strg+Umschalt+S | Speichern unter |
 | Strg+E | Exportieren |
 | Strg+Umschalt+E | Schnellexport |
