@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9.1</title>
+      <pubDate>Wed, 25 Nov 2026 16:11:33 GMT</pubDate>
+      <sparkle:version>12</sparkle:version>
+      <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Songs, geschnitten, um der Kurve zu folgen.</b> Generieren darf einen Song jetzt früher enden oder später beginnen lassen, wo seine Musik wechselt und die Kurve sich von ihm entfernt hat, und es darf Intros und Outros weglassen. Die Details eines geschnittenen Songs zeigen, was spielt, und <b>Ungeschnitten spielen</b> spielt ihn wieder ganz. In neuen Sets ist es an, in vorher gesicherten Sets aus; du schaltest es in den Optionen des Sets um.</li><li><b>Wiederholte Teile.</b> Markiere mit <b>Teil wiederholen…</b> in den Details eines Songs, unter „Teile auslassen“, einen Teil, der sich wiederholen darf. <b>Übergang anhören</b> spielt die Überblendung zurück an den Anfang des Teils. Generieren darf den Teil dann wiederholen, damit der Song länger spielt, bis so oft, wie du festlegst. Im Set ziehst du am Ende eines Songs, um ganze Wiederholungen hinzuzufügen oder wegzunehmen, oder nimmst <b>Noch einmal wiederholen</b> in seinem Menü. Der Song bleibt im Katalog und in anderen Sets, wie er ist.</li><li><b>Große Importe laufen ruhiger.</b> Während Songs analysiert werden, sichert die App nur, was sich geändert hat, einmal pro Song und im Hintergrund, sodass der Katalog nicht mehr stockt. Ein Song, der beim Beenden noch analysiert wird, wird beim nächsten Start erneut analysiert.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9.1/TrackCatalogue-Setup-0.9.1.exe" length="45324489" type="application/octet-stream" sparkle:edSignature="nRgbuvLHYqb5VW6qzNuAo1Vv9ysdy+PmE9luSZ1dXuMAKXxwMID+LfP7unUuKGmcnWnbY87/1RHDDhC/0iyvCA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.9</title>
       <pubDate>Wed, 25 Nov 2026 00:23:12 GMT</pubDate>
       <sparkle:version>11</sparkle:version>

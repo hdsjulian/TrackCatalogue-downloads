@@ -3,6 +3,16 @@
   <channel>
     <title>Track Catalogue for Mac</title>
     <item>
+      <title>Track Catalogue 0.9.1</title>
+      <pubDate>Wed, 25 Nov 2026 16:11:33 GMT</pubDate>
+      <sparkle:version>12</sparkle:version>
+      <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><b>Songs cut to follow the curve.</b> Generate may now end a song early, or start it later, where its music changes and the curve has moved away from it, and it may leave out intros and outros. A cut song's details say what plays, and <b>Play Uncut</b> plays it whole again. It's on in new sets and off in sets you saved before; switch it in the set's options.</li><li><b>Loops.</b> Mark a part of a song to repeat with <b>Loop Part…</b> in its details, under Leave Out Parts. <b>Hear the Join</b> plays the crossfade back to the part's start. Generate may then repeat the part to play the song longer, up to the number of times you set. In a set, drag a song's end to add or remove whole repeats, or use <b>Repeat Its Loop Once More</b> in its menu. The song stays as it is in the catalogue and in other sets.</li><li><b>Smoother big imports.</b> While songs are analysed, the app saves only what changed, once per song and in the background, so the catalogue no longer stalls. A song still being analysed when you quit is analysed again at the next start.</li></ul>]]></description>
+      <description xml:lang="de"><![CDATA[<ul><li><b>Songs, geschnitten, um der Kurve zu folgen.</b> Generieren darf einen Song jetzt früher enden oder später beginnen lassen, wo seine Musik wechselt und die Kurve sich von ihm entfernt hat, und es darf Intros und Outros weglassen. Die Details eines geschnittenen Songs zeigen, was spielt, und <b>Ungeschnitten spielen</b> spielt ihn wieder ganz. In neuen Sets ist es an, in vorher gesicherten Sets aus; du schaltest es in den Optionen des Sets um.</li><li><b>Wiederholte Teile.</b> Markiere mit <b>Teil wiederholen…</b> in den Details eines Songs, unter „Teile auslassen“, einen Teil, der sich wiederholen darf. <b>Übergang anhören</b> spielt die Überblendung zurück an den Anfang des Teils. Generieren darf den Teil dann wiederholen, damit der Song länger spielt, bis so oft, wie du festlegst. Im Set ziehst du am Ende eines Songs, um ganze Wiederholungen hinzuzufügen oder wegzunehmen, oder nimmst <b>Noch einmal wiederholen</b> in seinem Menü. Der Song bleibt im Katalog und in anderen Sets, wie er ist.</li><li><b>Große Importe laufen ruhiger.</b> Während Songs analysiert werden, sichert die App nur, was sich geändert hat, einmal pro Song und im Hintergrund, sodass der Katalog nicht mehr stockt. Ein Song, der beim Beenden noch analysiert wird, wird beim nächsten Start erneut analysiert.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9.1/TrackCatalogue-0.9.1.dmg" length="27864926" type="application/octet-stream" sparkle:edSignature="ZkHRxCLpHlu7KKlhon902N9tzlDMjhfPonbvq9z7p8xVjkTgZ1VPbHUHQn/Yk6if7f4o9zS5+OpgoR30zcwCAg=="/>
+    </item>
+    <item>
       <title>Track Catalogue 0.9</title>
       <pubDate>Wed, 25 Nov 2026 00:23:12 GMT</pubDate>
       <sparkle:version>11</sparkle:version>
