@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9</title>
+      <pubDate>Wed, 25 Nov 2026 00:23:12 GMT</pubDate>
+      <sparkle:version>11</sparkle:version>
+      <sparkle:shortVersionString>0.9</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Hear only the vocals, or only the music.</b> Under Play in a song's details: Both, Vocals or Music. Switching separates the song in a few seconds, on your computer, and it plays on from the same place. Use it to check whether a song has vocals, or whether its words can be understood. The first time, the app asks to download a model (80 MB); Settings can remove it. It's only for listening: sets are unchanged. Not on Intel Macs.</li><li><b>Transitions remembered across sets.</b> The last transition you set between two songs (its kind, length, beat offset, fade shape or drawn fades) comes back whenever the same two songs meet in a set for the first time: in a new set, or after Generate. Sets you've prepared keep the transitions they have. The first start after the update learns them from the sets you've saved.</li><li><b>When the pool runs short of an intensity.</b> An orange band under the curve says which intensity is missing and about how many more songs it needs. Generate asks first: approximate with the nearest intensities, or add the catalogue's songs at that intensity to the pool. Songs standing in are marked, such as "7 for 9".</li><li><b>Copy to Catalogue.</b> Right-click selected songs to copy them to another catalogue, or to a new one, with everything you've set and everything the analysis found.</li><li><b>Nothing is sent to Microsoft.</b> The library that finds vocals and separates songs no longer reports its use.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9/TrackCatalogue-Setup-0.9.exe" length="45139031" type="application/octet-stream" sparkle:edSignature="pej47tDbriAYU/7lmzXweOgDq9hsy3GVqJ1n9xWI+bcS2NtqipGxacrwIUng/6bnuxgU+2b0A4R4ncN+Lzw/DA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8.2</title>
       <pubDate>Tue, 24 Nov 2026 17:12:20 GMT</pubDate>
       <sparkle:version>10</sparkle:version>

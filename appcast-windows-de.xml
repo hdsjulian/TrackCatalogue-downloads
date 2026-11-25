@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9</title>
+      <pubDate>Wed, 25 Nov 2026 00:23:12 GMT</pubDate>
+      <sparkle:version>11</sparkle:version>
+      <sparkle:shortVersionString>0.9</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Nur den Gesang hören, oder nur die Musik.</b> Unter „Abspielen“ in den Details eines Songs: Beide, Gesang oder Musik. Beim Umschalten wird der Song in ein paar Sekunden getrennt, auf deinem Computer, und spielt an derselben Stelle weiter. So prüfst du, ob ein Song Gesang hat und ob man die Worte versteht. Beim ersten Mal fragt die App, ob sie ein Modell laden darf (80 MB); in den Einstellungen lässt es sich entfernen. Es ist nur zum Anhören: Sets bleiben, wie sie sind. Nicht auf Intel-Macs.</li><li><b>Übergänge, die sich die App über Sets hinweg merkt.</b> Der letzte Übergang, den du zwischen zwei Songs eingestellt hast (Art, Länge, Beat-Versatz, Blendenform oder gezeichnete Blenden), kommt wieder, wenn dieselben zwei Songs zum ersten Mal in einem Set aufeinandertreffen: in einem neuen Set oder nach Generieren. Vorbereitete Sets behalten ihre Übergänge. Beim ersten Start nach dem Update lernt die App sie aus deinen gespeicherten Sets.</li><li><b>Wenn dem Pool eine Intensität fehlt.</b> Ein orangefarbenes Band unter der Kurve zeigt, welche Intensität fehlt und wie viele Songs es etwa noch braucht. Generieren fragt vorher: mit den nächsten Intensitäten annähern, oder die Songs des Katalogs mit dieser Intensität zum Pool hinzufügen. Einspringende Songs sind markiert, etwa „7 statt 9“.</li><li><b>In Katalog kopieren.</b> Mit einem Rechtsklick kopierst du ausgewählte Songs in einen anderen oder einen neuen Katalog, mit allem, was du festgelegt hast, und allem, was die Analyse gefunden hat.</li><li><b>Nichts geht an Microsoft.</b> Die Bibliothek, die Gesang findet und Songs trennt, meldet ihre Nutzung nicht mehr.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9/TrackCatalogue-Setup-0.9.exe" length="45139031" type="application/octet-stream" sparkle:edSignature="pej47tDbriAYU/7lmzXweOgDq9hsy3GVqJ1n9xWI+bcS2NtqipGxacrwIUng/6bnuxgU+2b0A4R4ncN+Lzw/DA==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.8.2</title>
       <pubDate>Tue, 24 Nov 2026 17:12:20 GMT</pubDate>
       <sparkle:version>10</sparkle:version>
