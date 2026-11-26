@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9.2</title>
+      <pubDate>Thu, 26 Nov 2026 01:26:42 GMT</pubDate>
+      <sparkle:version>13</sparkle:version>
+      <sparkle:shortVersionString>0.9.2</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Schneller mit großen Katalogen.</b> Mit Tausenden von Songs öffnet sich ein neues Set viel schneller, generiert schneller und reagiert sofort auf Klicks, und beim Sichern wird nur geschrieben, was sich geändert hat: Das Öffnen des Katalogs schreibt nicht mehr jeden Song neu. Während ein Set seine Songs liest oder generiert, siehst du, dass die App beschäftigt ist.</li><li><b>Die Details eines Songs behalten deine Änderungen.</b> Nach „Rückgängig“ oder einem auf dem Diagramm gezogenen Teil, während der Cursor in einem Feld wie „Verwenden bis“ stand, setzt das Verlassen des Felds nicht mehr den alten Wert zurück.</li><li><b>Unter Windows</b> bleibt die Länge eines Sets, wie du sie eingegeben hast, wenn du seine Kurve änderst, und ein offenes Set übernimmt Änderungen an seinen Songs im Katalog.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9.2/TrackCatalogue-Setup-0.9.2.exe" length="45375564" type="application/octet-stream" sparkle:edSignature="XUmJWogHXWAw5El0lPXCMh7gZzto1S826P1y37wXSLUNLeVNdX66DL3JAGbPEYt5Koi2oUPA7WdGYXmHi/rqBg==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.9.1</title>
       <pubDate>Wed, 25 Nov 2026 16:11:33 GMT</pubDate>
       <sparkle:version>12</sparkle:version>

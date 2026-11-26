@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9.2</title>
+      <pubDate>Thu, 26 Nov 2026 01:26:42 GMT</pubDate>
+      <sparkle:version>13</sparkle:version>
+      <sparkle:shortVersionString>0.9.2</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Faster with large catalogues.</b> With thousands of songs, a new set opens, generates and answers clicks much sooner, and saving writes only what changed: opening the catalogue no longer writes every song again. While a set reads its songs or generates, you can see that the app is busy.</li><li><b>Song details keep your changes.</b> After Undo, or a part dragged on the chart, while the cursor was in a field such as Use until, leaving the field no longer puts the old value back.</li><li><b>On Windows,</b> a set's length stays as you typed it when you change its curve, and an open set follows changes to its songs in the catalogue.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9.2/TrackCatalogue-Setup-0.9.2.exe" length="45375564" type="application/octet-stream" sparkle:edSignature="XUmJWogHXWAw5El0lPXCMh7gZzto1S826P1y37wXSLUNLeVNdX66DL3JAGbPEYt5Koi2oUPA7WdGYXmHi/rqBg==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.9.1</title>
       <pubDate>Wed, 25 Nov 2026 16:11:33 GMT</pubDate>
       <sparkle:version>12</sparkle:version>
