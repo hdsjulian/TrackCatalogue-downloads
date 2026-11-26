@@ -3,6 +3,14 @@
   <channel>
     <title>Track Catalogue for Windows</title>
     <item>
+      <title>Track Catalogue 0.9.3</title>
+      <pubDate>Thu, 26 Nov 2026 13:18:23 GMT</pubDate>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>0.9.3</sparkle:shortVersionString>
+      <description><![CDATA[<ul><li><b>Eine angeklickte Überblendung bleibt ausgewählt.</b> Wenn du eine Überblendung anhörst, springen die Details nicht mehr zum Song davor, und ein Song oder eine Überblendung, die du anklickst, während das Set spielt, bleibt ausgewählt, bis die nächste spielt.</li><li><b>Ein gezogener Teil bleibt, wo du ihn hinlegst.</b> Ziehst du unter der Zeitleiste den Anfang eines Songs, der sein Intro überspringt, nach vorn, spielt er jetzt von dort, statt zurückzuspringen. Ziehst du eine Kante, ändert sich nur dieses Ende des Songs.</li></ul>]]></description>
+      <enclosure url="https://github.com/hdsjulian/TrackCatalogue-downloads/releases/download/v0.9.3/TrackCatalogue-Setup-0.9.3.exe" length="45389603" type="application/octet-stream" sparkle:edSignature="W4RcrjqU4vjLki9rmU233ppXYIp2+yAXLrqLnGL4eiBSRJKvuEsobm5Cu54ZvO6pADxR5nhRplAKLWA5kDWnAw==" sparkle:os="windows" sparkle:installerArguments="/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER"/>
+    </item>
+    <item>
       <title>Track Catalogue 0.9.2</title>
       <pubDate>Thu, 26 Nov 2026 01:26:42 GMT</pubDate>
       <sparkle:version>13</sparkle:version>
